@@ -26,6 +26,7 @@ package vista;
 	    private JTextArea cajaTexto;
 	    private JButton boton1;
 	    private  JButton boton3;
+	    private JButton boton2;
 	    private ArrayList<String> texto = new ArrayList<String>();
 
 	    public PantallaInicio() {
@@ -52,7 +53,7 @@ package vista;
 	        this.getContentPane().add(cajaTexto, constraints);
 	        constraints.weighty = 0.0;
 
-	        boton1 = new JButton("Esta es la primer pregunta");
+	        boton1 = new JButton("Deseo reservar una sala");
 	        constraints.gridx = 2;
 	        constraints.gridy = 0;
 	        constraints.gridwidth = 1;
@@ -69,7 +70,7 @@ package vista;
 	        constraints.anchor = GridBagConstraints.CENTER;
 	        constraints.weighty = 0.0;
 
-	        JButton boton2 = new JButton("opcion 2");
+	        boton2 = new JButton("Disponibiles");
 	        constraints.gridx = 2;
 	        constraints.gridy = 1;
 	        constraints.gridwidth = 1;
@@ -81,6 +82,7 @@ package vista;
 	// Restauramos valores por defecto.
 	        constraints.weighty = 0.0;
 	        constraints.anchor = GridBagConstraints.CENTER;
+	        boton2.addActionListener(this);
 
 	        boton3 = new JButton("¿Enviar?");
 	        constraints.gridx = 0;
@@ -91,7 +93,7 @@ package vista;
 	        boton3.addActionListener(this);
 	        
 	        
-	        butonAceptar = new JButton("BotonPrueba");
+	        butonAceptar = new JButton("¿Cuantas horas puedo reservar?");
 	        constraints.gridx = 2;
 	        constraints.gridy = 2;
 	        constraints.gridwidth = 1;
@@ -133,10 +135,22 @@ package vista;
 	        // preguntas p = new preguntas();
 	        if (control.equals(butonAceptar)) {
 
-	            texto.add("Hola\n");
+	            texto.add("\n¿Cuantas horas puedo reservar?");
+	            texto.add("\nPuedes reservar maximo 2 veces al día");
 
 	        } else if (control.equals(boton1)) {
-	            texto.add("como te va\n");
+	            texto.add("\ncomo te va\n");
+	        }
+	        else if(control.equals(boton2)) {
+	        	texto.add("\nEstas son las salas disponibles");
+	        	texto.add("\nsala 203");
+	        	texto.add("\nsala 205");
+	        	texto.add("\nsala 208");
+	        	texto.add("\nsala 303");
+	        	
+	        	
+	        	
+	        	
 	        }
 	        String var = texto.toString();
 	        System.out.println(var);
@@ -151,5 +165,3 @@ package vista;
 	    }
 
 	}
-
-
