@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import java.io.File;
+
 /**
  *
  * @author hp
@@ -19,9 +21,13 @@ public class Login extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         
         
-        rsscalelabel.RSScaleLabel.setScaleLabel(IconoUsuario, "C:\\Users\\hp\\Documents\\NetBeansProjects\\RTR\\src\\images\\avatar.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(LabelCerrar, "C:\\Users\\hp\\Documents\\NetBeansProjects\\RTR\\src\\images\\cancel.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(IconEntrar, "C:\\Users\\hp\\Documents\\NetBeansProjects\\RTR\\src\\images\\next-1.png");
+        
+        File IconoUser = new File("src\\images\\avatar.png");
+        File IconoCancel = new File("src\\images\\cancel.png");
+        File IconNext = new File("src\\images\\next-1.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(IconoUsuario, IconoUser.getAbsolutePath());
+        rsscalelabel.RSScaleLabel.setScaleLabel(LabelCerrar, IconoCancel.getAbsolutePath());
+        rsscalelabel.RSScaleLabel.setScaleLabel(IconEntrar, IconNext.getAbsolutePath());
     }   
 
     /**
@@ -47,12 +53,12 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1000, 550));
+        setPreferredSize(new java.awt.Dimension(1050, 580));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(51, 153, 255));
-        jPanel2.setPreferredSize(new java.awt.Dimension(1000, 550));
+        jPanel2.setPreferredSize(new java.awt.Dimension(1050, 580));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         IconoUsuario.setPreferredSize(new java.awt.Dimension(20, 512));
@@ -81,7 +87,7 @@ public class Login extends javax.swing.JFrame {
                 LabelCerrarMouseClicked(evt);
             }
         });
-        jPanel2.add(LabelCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 20, 30, 30));
+        jPanel2.add(LabelCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 10, 30, 30));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
@@ -93,6 +99,11 @@ public class Login extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel3.setText("Entrar");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, -1, -1));
         jPanel2.add(IconEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, 30, 30));
 
@@ -100,7 +111,7 @@ public class Login extends javax.swing.JFrame {
         jPasswordField1.setBorder(null);
         jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 314, 170, 10));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 570));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 580));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -112,6 +123,13 @@ public class Login extends javax.swing.JFrame {
     private void LabelCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelCerrarMouseClicked
         System.exit(0);
     }//GEN-LAST:event_LabelCerrarMouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+      vista.PantallaIncio frame2 = new vista.PantallaIncio();
+        frame2.setVisible(true);                                                                                                               
+        Login.this.dispose();
+
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
      * @param args the command line arguments
