@@ -6,6 +6,7 @@
 package vista;
 
 import java.io.File;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -19,14 +20,18 @@ public class PantallaIncio extends javax.swing.JFrame {
     public PantallaIncio() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
-        
-        
-        File IconoExit = new File("src\\images\\cancel.png");
-        
-        rsscalelabel.RSScaleLabel.setScaleLabel(LabelCerrar, IconoExit.getAbsolutePath());
-        
-    }   
+
+        File IconoChat = new File("src\\images\\chat.png");
+        File IconoMas = new File("src\\images\\anadir.png");
+        File IconoCancel = new File("src\\images\\cerrar.png");
+        File IconMinimizar = new File("src\\images\\minimizar.png");
+
+        rsscalelabel.RSScaleLabel.setScaleLabel(labelChat, IconoChat.getAbsolutePath());
+        rsscalelabel.RSScaleLabel.setScaleLabel(labelMas, IconoMas.getAbsolutePath());
+        rsscalelabel.RSScaleLabel.setScaleLabel(LabelCerrar, IconoCancel.getAbsolutePath());
+        rsscalelabel.RSScaleLabel.setScaleLabel(IconoMinimizar, IconMinimizar.getAbsolutePath());
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,27 +42,395 @@ public class PantallaIncio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        panelprincipal = new javax.swing.JPanel();
+        Informacion = new javax.swing.JInternalFrame();
+        jPanel1 = new javax.swing.JPanel();
+        jButton4 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
         LabelCerrar = new javax.swing.JLabel();
+        labelMas = new javax.swing.JLabel();
+        labelChat = new javax.swing.JLabel();
+        IconoMinimizar = new javax.swing.JLabel();
+        IconCerrar = new javax.swing.JLabel();
+        panelSalas = new javax.swing.JPanel();
+        s201 = new javax.swing.JButton();
+        s202 = new javax.swing.JButton();
+        s203 = new javax.swing.JButton();
+        s204 = new javax.swing.JButton();
+        s205 = new javax.swing.JButton();
+        s206 = new javax.swing.JButton();
+        s207 = new javax.swing.JButton();
+        s208 = new javax.swing.JButton();
+        s209 = new javax.swing.JButton();
+        s210 = new javax.swing.JButton();
+        s301 = new javax.swing.JButton();
+        s302 = new javax.swing.JButton();
+        s303 = new javax.swing.JButton();
+        s304 = new javax.swing.JButton();
+        s305 = new javax.swing.JButton();
+        s306 = new javax.swing.JButton();
+        s307 = new javax.swing.JButton();
+        s308 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(51, 153, 255));
-        jPanel2.setMinimumSize(new java.awt.Dimension(46, 25));
-        jPanel2.setPreferredSize(new java.awt.Dimension(1000, 550));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelprincipal.setBackground(new java.awt.Color(51, 153, 255));
+        panelprincipal.setMinimumSize(new java.awt.Dimension(46, 25));
+        panelprincipal.setPreferredSize(new java.awt.Dimension(1000, 550));
+        panelprincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Informacion.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
+        Informacion.setAutoscrolls(true);
+        Informacion.setFocusTraversalPolicyProvider(true);
+        Informacion.setVisible(false);
+
+        jButton4.setText("jButton4");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+
+        jLabel3.setText("Capacidad:");
+
+        jLabel4.setText("Recursos");
+
+        jTextField1.setText("jTextField1");
+
+        jTextField2.setText("jTextField2");
+
+        jLabel5.setText("Informacion Adicional");
+
+        jTextField3.setText("jTextField3");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton4)
+                .addGap(83, 83, 83))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(232, 232, 232)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
+                        .addGap(45, 45, 45)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
+                            .addComponent(jTextField3))))
+                .addContainerGap(152, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(58, 58, 58))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
+                .addComponent(jButton4)
+                .addGap(31, 31, 31))
+        );
+
+        Informacion.getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+
+        panelprincipal.add(Informacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 590, 410));
 
         LabelCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LabelCerrarMouseClicked(evt);
             }
         });
-        jPanel2.add(LabelCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 10, 30, 30));
+        panelprincipal.add(LabelCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 10, 30, 30));
+        panelprincipal.add(labelMas, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 280, 70, 70));
+        panelprincipal.add(labelChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 400, 70, 70));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 580));
+        IconoMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                IconoMinimizarMouseClicked(evt);
+            }
+        });
+        panelprincipal.add(IconoMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 10, 30, 30));
+
+        IconCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                IconCerrarMouseClicked(evt);
+            }
+        });
+        panelprincipal.add(IconCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 10, 30, 30));
+
+        panelSalas.setLayout(new java.awt.GridLayout(10, 10, 5, 5));
+
+        s201.setText("201");
+        s201.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s201MouseClicked(evt);
+            }
+        });
+        s201.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s201ActionPerformed(evt);
+            }
+        });
+        panelSalas.add(s201);
+
+        s202.setText("202");
+        s202.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s202MouseClicked(evt);
+            }
+        });
+        s202.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s202ActionPerformed(evt);
+            }
+        });
+        panelSalas.add(s202);
+
+        s203.setText("203");
+        s203.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s203MouseClicked(evt);
+            }
+        });
+        s203.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s203ActionPerformed(evt);
+            }
+        });
+        panelSalas.add(s203);
+
+        s204.setText("204");
+        s204.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s204MouseClicked(evt);
+            }
+        });
+        s204.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s204ActionPerformed(evt);
+            }
+        });
+        panelSalas.add(s204);
+
+        s205.setText("205");
+        s205.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s205MouseClicked(evt);
+            }
+        });
+        s205.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s205ActionPerformed(evt);
+            }
+        });
+        panelSalas.add(s205);
+
+        s206.setText("206");
+        s206.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s206MouseClicked(evt);
+            }
+        });
+        s206.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s206ActionPerformed(evt);
+            }
+        });
+        panelSalas.add(s206);
+
+        s207.setText("207");
+        s207.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s207MouseClicked(evt);
+            }
+        });
+        s207.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s207ActionPerformed(evt);
+            }
+        });
+        panelSalas.add(s207);
+
+        s208.setText("208");
+        s208.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s208MouseClicked(evt);
+            }
+        });
+        s208.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s208ActionPerformed(evt);
+            }
+        });
+        panelSalas.add(s208);
+
+        s209.setText("209");
+        s209.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s209MouseClicked(evt);
+            }
+        });
+        s209.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s209ActionPerformed(evt);
+            }
+        });
+        panelSalas.add(s209);
+
+        s210.setText("210");
+        s210.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s210MouseClicked(evt);
+            }
+        });
+        s210.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s210ActionPerformed(evt);
+            }
+        });
+        panelSalas.add(s210);
+
+        s301.setText("301");
+        s301.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s301MouseClicked(evt);
+            }
+        });
+        s301.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s301ActionPerformed(evt);
+            }
+        });
+        panelSalas.add(s301);
+
+        s302.setText("302");
+        s302.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s302MouseClicked(evt);
+            }
+        });
+        s302.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s302ActionPerformed(evt);
+            }
+        });
+        panelSalas.add(s302);
+
+        s303.setText("303");
+        s303.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s303MouseClicked(evt);
+            }
+        });
+        s303.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s303ActionPerformed(evt);
+            }
+        });
+        panelSalas.add(s303);
+
+        s304.setText("304");
+        s304.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s304MouseClicked(evt);
+            }
+        });
+        s304.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s304ActionPerformed(evt);
+            }
+        });
+        panelSalas.add(s304);
+
+        s305.setText("305");
+        s305.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s305MouseClicked(evt);
+            }
+        });
+        s305.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s305ActionPerformed(evt);
+            }
+        });
+        panelSalas.add(s305);
+
+        s306.setText("306");
+        s306.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s306MouseClicked(evt);
+            }
+        });
+        s306.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s306ActionPerformed(evt);
+            }
+        });
+        panelSalas.add(s306);
+
+        s307.setText("307");
+        s307.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s307MouseClicked(evt);
+            }
+        });
+        s307.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s307ActionPerformed(evt);
+            }
+        });
+        panelSalas.add(s307);
+
+        s308.setText("308");
+        s308.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s308MouseClicked(evt);
+            }
+        });
+        s308.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s308ActionPerformed(evt);
+            }
+        });
+        panelSalas.add(s308);
+
+        panelprincipal.add(panelSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 830, 470));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
+        jLabel1.setText("Salas");
+        panelprincipal.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 110, 30));
+
+        getContentPane().add(panelprincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 580));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -66,11 +439,165 @@ public class PantallaIncio extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_LabelCerrarMouseClicked
 
+    private void IconoMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconoMinimizarMouseClicked
+        this.setExtendedState(ICONIFIED);
+    }//GEN-LAST:event_IconoMinimizarMouseClicked
+
+    private void IconCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrarMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_IconCerrarMouseClicked
+
+    private void s201ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s201ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s201ActionPerformed
+
+    private void s201MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s201MouseClicked
+      
+        Informacion.setVisible(true);
+        panelSalas.hide();  
+    }//GEN-LAST:event_s201MouseClicked
+
+    private void s202MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s202MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s202MouseClicked
+
+    private void s202ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s202ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s202ActionPerformed
+
+    private void s203MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s203MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s203MouseClicked
+
+    private void s203ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s203ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s203ActionPerformed
+
+    private void s204MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s204MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s204MouseClicked
+
+    private void s204ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s204ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s204ActionPerformed
+
+    private void s205MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s205MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s205MouseClicked
+
+    private void s205ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s205ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s205ActionPerformed
+
+    private void s206MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s206MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s206MouseClicked
+
+    private void s206ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s206ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s206ActionPerformed
+
+    private void s207MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s207MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s207MouseClicked
+
+    private void s207ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s207ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s207ActionPerformed
+
+    private void s208MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s208MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s208MouseClicked
+
+    private void s208ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s208ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s208ActionPerformed
+
+    private void s209MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s209MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s209MouseClicked
+
+    private void s209ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s209ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s209ActionPerformed
+
+    private void s210MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s210MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s210MouseClicked
+
+    private void s210ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s210ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s210ActionPerformed
+
+    private void s301MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s301MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s301MouseClicked
+
+    private void s301ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s301ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s301ActionPerformed
+
+    private void s302MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s302MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s302MouseClicked
+
+    private void s302ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s302ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s302ActionPerformed
+
+    private void s303MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s303MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s303MouseClicked
+
+    private void s303ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s303ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s303ActionPerformed
+
+    private void s304MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s304MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s304MouseClicked
+
+    private void s304ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s304ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s304ActionPerformed
+
+    private void s305MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s305MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s305MouseClicked
+
+    private void s305ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s305ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s305ActionPerformed
+
+    private void s306MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s306MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s306MouseClicked
+
+    private void s306ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s306ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s306ActionPerformed
+
+    private void s307MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s307MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s307MouseClicked
+
+    private void s307ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s307ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s307ActionPerformed
+
+    private void s308MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s308MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s308MouseClicked
+
+    private void s308ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s308ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s308ActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -101,7 +628,41 @@ public class PantallaIncio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel IconCerrar;
+    private javax.swing.JLabel IconoMinimizar;
+    private javax.swing.JInternalFrame Informacion;
     private javax.swing.JLabel LabelCerrar;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JLabel labelChat;
+    private javax.swing.JLabel labelMas;
+    private javax.swing.JPanel panelSalas;
+    private javax.swing.JPanel panelprincipal;
+    private javax.swing.JButton s201;
+    private javax.swing.JButton s202;
+    private javax.swing.JButton s203;
+    private javax.swing.JButton s204;
+    private javax.swing.JButton s205;
+    private javax.swing.JButton s206;
+    private javax.swing.JButton s207;
+    private javax.swing.JButton s208;
+    private javax.swing.JButton s209;
+    private javax.swing.JButton s210;
+    private javax.swing.JButton s301;
+    private javax.swing.JButton s302;
+    private javax.swing.JButton s303;
+    private javax.swing.JButton s304;
+    private javax.swing.JButton s305;
+    private javax.swing.JButton s306;
+    private javax.swing.JButton s307;
+    private javax.swing.JButton s308;
     // End of variables declaration//GEN-END:variables
 }
