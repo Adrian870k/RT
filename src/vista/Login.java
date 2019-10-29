@@ -33,6 +33,7 @@ public class Login extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(IconCerrar, IconoCancel.getAbsolutePath());
         rsscalelabel.RSScaleLabel.setScaleLabel(IconEntrar, IconNext.getAbsolutePath());
         rsscalelabel.RSScaleLabel.setScaleLabel(IconoMinimizar, IconMinimizar.getAbsolutePath());
+
     }
 
     /**
@@ -62,14 +63,19 @@ public class Login extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(51, 153, 255));
+        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(1050, 580));
+        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel2MouseEntered(evt);
+            }
+        });
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         IconoUsuario.setPreferredSize(new java.awt.Dimension(20, 512));
-        jPanel2.add(IconoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(417, 107, 130, 130));
+        jPanel2.add(IconoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, 130, 130));
 
-        JtextUsername.setBackground(new java.awt.Color(51, 153, 255));
+        JtextUsername.setBackground(new java.awt.Color(204, 204, 255));
         JtextUsername.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         JtextUsername.setBorder(null);
         JtextUsername.addInputMethodListener(new java.awt.event.InputMethodListener() {
@@ -116,10 +122,15 @@ public class Login extends javax.swing.JFrame {
                 labelEntrarMouseClicked(evt);
             }
         });
+        labelEntrar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                labelEntrarKeyPressed(evt);
+            }
+        });
         jPanel2.add(labelEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, -1, -1));
         jPanel2.add(IconEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, 30, 30));
 
-        JtextPassword.setBackground(new java.awt.Color(51, 153, 255));
+        JtextPassword.setBackground(new java.awt.Color(204, 204, 255));
         JtextPassword.setBorder(null);
         jPanel2.add(JtextPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, 170, 20));
 
@@ -147,15 +158,14 @@ public class Login extends javax.swing.JFrame {
     private void labelEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelEntrarMouseClicked
         NombreUsuario = JtextUsername.getText();
         PasswordUsuario = JtextPassword.getText();
-        System.out.println(NombreUsuario+" "+PasswordUsuario);
-        if ("admin".equals(NombreUsuario) && "abc".equals(PasswordUsuario)) {
+        
+        if ("yordan.quintero".equals(NombreUsuario) && "laclave".equals(PasswordUsuario)) {
             vista.PantallaIncio frame2 = new vista.PantallaIncio();
             frame2.setVisible(true);
             Login.this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta");
         }
-
     }//GEN-LAST:event_labelEntrarMouseClicked
 
     private void JtextUsernameInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_JtextUsernameInputMethodTextChanged
@@ -165,6 +175,14 @@ public class Login extends javax.swing.JFrame {
     private void IconCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrarMouseClicked
         System.exit(0);
     }//GEN-LAST:event_IconCerrarMouseClicked
+
+    private void jPanel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseEntered
+      
+    }//GEN-LAST:event_jPanel2MouseEntered
+
+    private void labelEntrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_labelEntrarKeyPressed
+      
+    }//GEN-LAST:event_labelEntrarKeyPressed
 
     /**
      * @param args the command line arguments
@@ -181,24 +199,19 @@ public class Login extends javax.swing.JFrame {
                 if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+                } else {
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
+        //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Login().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Login().setVisible(true);
         });
     }
 

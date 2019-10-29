@@ -25,11 +25,13 @@ public class PantallaIncio extends javax.swing.JFrame {
         File IconoMas = new File("src\\images\\anadir.png");
         File IconoCancel = new File("src\\images\\cerrar.png");
         File IconMinimizar = new File("src\\images\\minimizar.png");
-
+        File IconHome = new File("src\\images\\home.png");
+        
         rsscalelabel.RSScaleLabel.setScaleLabel(labelChat, IconoChat.getAbsolutePath());
         rsscalelabel.RSScaleLabel.setScaleLabel(labelMas, IconoMas.getAbsolutePath());
         rsscalelabel.RSScaleLabel.setScaleLabel(LabelCerrar, IconoCancel.getAbsolutePath());
         rsscalelabel.RSScaleLabel.setScaleLabel(IconoMinimizar, IconMinimizar.getAbsolutePath());
+        rsscalelabel.RSScaleLabel.setScaleLabel(LabelHome, IconHome.getAbsolutePath());
 
     }
 
@@ -43,9 +45,22 @@ public class PantallaIncio extends javax.swing.JFrame {
     private void initComponents() {
 
         panelprincipal = new javax.swing.JPanel();
+        FrameChat = new javax.swing.JInternalFrame();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jPanel4 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        FrameMas = new javax.swing.JInternalFrame();
+        jPanel2 = new javax.swing.JPanel();
+        JButtonSalir = new javax.swing.JButton();
+        JButtonMisReservas = new javax.swing.JButton();
+        LabelHome = new javax.swing.JLabel();
         Informacion = new javax.swing.JInternalFrame();
         jPanel1 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
+        CerrarInfoSalas = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -84,17 +99,147 @@ public class PantallaIncio extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelprincipal.setBackground(new java.awt.Color(51, 153, 255));
+        panelprincipal.setBackground(new java.awt.Color(204, 204, 255));
         panelprincipal.setMinimumSize(new java.awt.Dimension(46, 25));
         panelprincipal.setPreferredSize(new java.awt.Dimension(1000, 550));
         panelprincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        FrameChat.setVisible(false);
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 565, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel4.setLayout(new java.awt.GridLayout(0, 1, 5, 0));
+
+        jButton1.setText("Pregunta1");
+        jPanel4.add(jButton1);
+
+        jButton2.setText("Pregunta2");
+        jPanel4.add(jButton2);
+
+        jButton3.setText("Cerrar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout FrameChatLayout = new javax.swing.GroupLayout(FrameChat.getContentPane());
+        FrameChat.getContentPane().setLayout(FrameChatLayout);
+        FrameChatLayout.setHorizontalGroup(
+            FrameChatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FrameChatLayout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(FrameChatLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(jButton3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        FrameChatLayout.setVerticalGroup(
+            FrameChatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FrameChatLayout.createSequentialGroup()
+                .addGroup(FrameChatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addContainerGap())
+        );
+
+        panelprincipal.add(FrameChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 30, 860, 440));
+
+        FrameMas.setFocusTraversalPolicyProvider(true);
+        FrameMas.setVisible(false);
+
+        JButtonSalir.setText("Salir");
+        JButtonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JButtonSalirMouseClicked(evt);
+            }
+        });
+        JButtonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JButtonSalirActionPerformed(evt);
+            }
+        });
+
+        JButtonMisReservas.setText("Mis reservas");
+
+        LabelHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LabelHomeMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(109, 109, 109)
+                .addComponent(JButtonSalir)
+                .addGap(107, 107, 107)
+                .addComponent(JButtonMisReservas)
+                .addContainerGap(112, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LabelHome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelHome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JButtonSalir)
+                    .addComponent(JButtonMisReservas))
+                .addGap(50, 50, 50))
+        );
+
+        javax.swing.GroupLayout FrameMasLayout = new javax.swing.GroupLayout(FrameMas.getContentPane());
+        FrameMas.getContentPane().setLayout(FrameMasLayout);
+        FrameMasLayout.setHorizontalGroup(
+            FrameMasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        FrameMasLayout.setVerticalGroup(
+            FrameMasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        panelprincipal.add(FrameMas, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 490, 260));
 
         Informacion.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         Informacion.setAutoscrolls(true);
         Informacion.setFocusTraversalPolicyProvider(true);
         Informacion.setVisible(false);
 
-        jButton4.setText("jButton4");
+        CerrarInfoSalas.setText("cerrar");
+        CerrarInfoSalas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CerrarInfoSalasMouseClicked(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
 
@@ -102,13 +247,32 @@ public class PantallaIncio extends javax.swing.JFrame {
 
         jLabel4.setText("Recursos");
 
-        jTextField1.setText("jTextField1");
+        jTextField1.setText("22");
+        jTextField1.setDragEnabled(true);
+        jTextField1.setEnabled(false);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
-        jTextField2.setText("jTextField2");
+        jTextField2.setText("java, 30 equipos en buen estado, video beam");
+        jTextField2.setEnabled(false);
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Informacion Adicional");
 
-        jTextField3.setText("jTextField3");
+        jTextField3.setText("El tablero esta dañado");
+        jTextField3.setEnabled(false);
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -116,7 +280,7 @@ public class PantallaIncio extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4)
+                .addComponent(CerrarInfoSalas)
                 .addGap(83, 83, 83))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,8 +296,8 @@ public class PantallaIncio extends javax.swing.JFrame {
                         .addGap(45, 45, 45)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
-                            .addComponent(jTextField3))))
+                            .addComponent(jTextField2)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE))))
                 .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -157,7 +321,7 @@ public class PantallaIncio extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)))
-                .addComponent(jButton4)
+                .addComponent(CerrarInfoSalas)
                 .addGap(31, 31, 31))
         );
 
@@ -171,7 +335,19 @@ public class PantallaIncio extends javax.swing.JFrame {
             }
         });
         panelprincipal.add(LabelCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 10, 30, 30));
+
+        labelMas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelMasMouseClicked(evt);
+            }
+        });
         panelprincipal.add(labelMas, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 280, 70, 70));
+
+        labelChat.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelChatMouseClicked(evt);
+            }
+        });
         panelprincipal.add(labelChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 400, 70, 70));
 
         IconoMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -191,9 +367,16 @@ public class PantallaIncio extends javax.swing.JFrame {
         panelSalas.setLayout(new java.awt.GridLayout(10, 10, 5, 5));
 
         s201.setText("201");
+        s201.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, new java.awt.Color(204, 255, 255), null, null));
+        s201.setBorderPainted(false);
+        s201.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        s201.setOpaque(false);
         s201.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 s201MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                s201MouseEntered(evt);
             }
         });
         s201.addActionListener(new java.awt.event.ActionListener() {
@@ -452,13 +635,14 @@ public class PantallaIncio extends javax.swing.JFrame {
     }//GEN-LAST:event_s201ActionPerformed
 
     private void s201MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s201MouseClicked
-      
+
         Informacion.setVisible(true);
-        panelSalas.hide();  
+        panelSalas.hide();
     }//GEN-LAST:event_s201MouseClicked
 
     private void s202MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s202MouseClicked
-        // TODO add your handling code here:
+        Informacion.setVisible(true);
+        panelSalas.hide();
     }//GEN-LAST:event_s202MouseClicked
 
     private void s202ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s202ActionPerformed
@@ -466,7 +650,8 @@ public class PantallaIncio extends javax.swing.JFrame {
     }//GEN-LAST:event_s202ActionPerformed
 
     private void s203MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s203MouseClicked
-        // TODO add your handling code here:
+        Informacion.setVisible(true);
+        panelSalas.hide();
     }//GEN-LAST:event_s203MouseClicked
 
     private void s203ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s203ActionPerformed
@@ -474,7 +659,8 @@ public class PantallaIncio extends javax.swing.JFrame {
     }//GEN-LAST:event_s203ActionPerformed
 
     private void s204MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s204MouseClicked
-        // TODO add your handling code here:
+        Informacion.setVisible(true);
+        panelSalas.hide();
     }//GEN-LAST:event_s204MouseClicked
 
     private void s204ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s204ActionPerformed
@@ -482,7 +668,8 @@ public class PantallaIncio extends javax.swing.JFrame {
     }//GEN-LAST:event_s204ActionPerformed
 
     private void s205MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s205MouseClicked
-        // TODO add your handling code here:
+        Informacion.setVisible(true);
+        panelSalas.hide();
     }//GEN-LAST:event_s205MouseClicked
 
     private void s205ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s205ActionPerformed
@@ -490,7 +677,8 @@ public class PantallaIncio extends javax.swing.JFrame {
     }//GEN-LAST:event_s205ActionPerformed
 
     private void s206MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s206MouseClicked
-        // TODO add your handling code here:
+        Informacion.setVisible(true);
+        panelSalas.hide();
     }//GEN-LAST:event_s206MouseClicked
 
     private void s206ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s206ActionPerformed
@@ -498,7 +686,8 @@ public class PantallaIncio extends javax.swing.JFrame {
     }//GEN-LAST:event_s206ActionPerformed
 
     private void s207MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s207MouseClicked
-        // TODO add your handling code here:
+        Informacion.setVisible(true);
+        panelSalas.hide();
     }//GEN-LAST:event_s207MouseClicked
 
     private void s207ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s207ActionPerformed
@@ -506,7 +695,8 @@ public class PantallaIncio extends javax.swing.JFrame {
     }//GEN-LAST:event_s207ActionPerformed
 
     private void s208MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s208MouseClicked
-        // TODO add your handling code here:
+        Informacion.setVisible(true);
+        panelSalas.hide();
     }//GEN-LAST:event_s208MouseClicked
 
     private void s208ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s208ActionPerformed
@@ -514,7 +704,8 @@ public class PantallaIncio extends javax.swing.JFrame {
     }//GEN-LAST:event_s208ActionPerformed
 
     private void s209MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s209MouseClicked
-        // TODO add your handling code here:
+        Informacion.setVisible(true);
+        panelSalas.hide();
     }//GEN-LAST:event_s209MouseClicked
 
     private void s209ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s209ActionPerformed
@@ -522,7 +713,8 @@ public class PantallaIncio extends javax.swing.JFrame {
     }//GEN-LAST:event_s209ActionPerformed
 
     private void s210MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s210MouseClicked
-        // TODO add your handling code here:
+        Informacion.setVisible(true);
+        panelSalas.hide();
     }//GEN-LAST:event_s210MouseClicked
 
     private void s210ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s210ActionPerformed
@@ -530,7 +722,8 @@ public class PantallaIncio extends javax.swing.JFrame {
     }//GEN-LAST:event_s210ActionPerformed
 
     private void s301MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s301MouseClicked
-        // TODO add your handling code here:
+        Informacion.setVisible(true);
+        panelSalas.hide();
     }//GEN-LAST:event_s301MouseClicked
 
     private void s301ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s301ActionPerformed
@@ -538,7 +731,8 @@ public class PantallaIncio extends javax.swing.JFrame {
     }//GEN-LAST:event_s301ActionPerformed
 
     private void s302MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s302MouseClicked
-        // TODO add your handling code here:
+        Informacion.setVisible(true);
+        panelSalas.hide();
     }//GEN-LAST:event_s302MouseClicked
 
     private void s302ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s302ActionPerformed
@@ -546,7 +740,8 @@ public class PantallaIncio extends javax.swing.JFrame {
     }//GEN-LAST:event_s302ActionPerformed
 
     private void s303MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s303MouseClicked
-        // TODO add your handling code here:
+        Informacion.setVisible(true);
+        panelSalas.hide();
     }//GEN-LAST:event_s303MouseClicked
 
     private void s303ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s303ActionPerformed
@@ -554,7 +749,8 @@ public class PantallaIncio extends javax.swing.JFrame {
     }//GEN-LAST:event_s303ActionPerformed
 
     private void s304MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s304MouseClicked
-        // TODO add your handling code here:
+        Informacion.setVisible(true);
+        panelSalas.hide();
     }//GEN-LAST:event_s304MouseClicked
 
     private void s304ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s304ActionPerformed
@@ -562,7 +758,8 @@ public class PantallaIncio extends javax.swing.JFrame {
     }//GEN-LAST:event_s304ActionPerformed
 
     private void s305MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s305MouseClicked
-        // TODO add your handling code here:
+        Informacion.setVisible(true);
+        panelSalas.hide();
     }//GEN-LAST:event_s305MouseClicked
 
     private void s305ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s305ActionPerformed
@@ -570,7 +767,8 @@ public class PantallaIncio extends javax.swing.JFrame {
     }//GEN-LAST:event_s305ActionPerformed
 
     private void s306MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s306MouseClicked
-        // TODO add your handling code here:
+        Informacion.setVisible(true);
+        panelSalas.hide();
     }//GEN-LAST:event_s306MouseClicked
 
     private void s306ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s306ActionPerformed
@@ -578,7 +776,8 @@ public class PantallaIncio extends javax.swing.JFrame {
     }//GEN-LAST:event_s306ActionPerformed
 
     private void s307MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s307MouseClicked
-        // TODO add your handling code here:
+        Informacion.setVisible(true);
+        panelSalas.hide();
     }//GEN-LAST:event_s307MouseClicked
 
     private void s307ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s307ActionPerformed
@@ -586,12 +785,73 @@ public class PantallaIncio extends javax.swing.JFrame {
     }//GEN-LAST:event_s307ActionPerformed
 
     private void s308MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s308MouseClicked
-        // TODO add your handling code here:
+        Informacion.setVisible(true);
+        panelSalas.hide();
     }//GEN-LAST:event_s308MouseClicked
 
     private void s308ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s308ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_s308ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void CerrarInfoSalasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CerrarInfoSalasMouseClicked
+        Informacion.setVisible(false);
+        panelSalas.setVisible(true);
+
+    }//GEN-LAST:event_CerrarInfoSalasMouseClicked
+
+    private void s201MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s201MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s201MouseEntered
+
+    private void labelChatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelChatMouseClicked
+        labelChat.setVisible(false);
+        labelMas.setVisible(false);
+        panelSalas.setVisible(false);
+        FrameChat.setVisible(true);
+    }//GEN-LAST:event_labelChatMouseClicked
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void labelMasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelMasMouseClicked
+        labelMas.setVisible(false);
+        labelChat.setVisible(false);
+        FrameMas.setVisible(true);
+        panelSalas.setVisible(false);
+    }//GEN-LAST:event_labelMasMouseClicked
+
+    private void JButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JButtonSalirActionPerformed
+
+    private void JButtonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JButtonSalirMouseClicked
+        Vista.Login frame1 = new Vista.Login();
+        frame1.setVisible(true);
+        PantallaIncio.this.dispose();
+    }//GEN-LAST:event_JButtonSalirMouseClicked
+
+    private void LabelHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelHomeMouseClicked
+        labelMas.setVisible(true);
+        labelChat.setVisible(true);
+        FrameMas.setVisible(false);
+        panelSalas.setVisible(true);
+    }//GEN-LAST:event_LabelHomeMouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        labelMas.setVisible(true);
+        labelChat.setVisible(true);
+        FrameChat.setVisible(false);
+        panelSalas.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -605,20 +865,17 @@ public class PantallaIncio extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+                if (!"Windows".equals(info.getName())) {
+                } else {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Vista.Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */
@@ -628,17 +885,30 @@ public class PantallaIncio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CerrarInfoSalas;
+    private javax.swing.JInternalFrame FrameChat;
+    private javax.swing.JInternalFrame FrameMas;
     private javax.swing.JLabel IconCerrar;
     private javax.swing.JLabel IconoMinimizar;
     private javax.swing.JInternalFrame Informacion;
+    private javax.swing.JButton JButtonMisReservas;
+    private javax.swing.JButton JButtonSalir;
     private javax.swing.JLabel LabelCerrar;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JLabel LabelHome;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
