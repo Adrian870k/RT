@@ -1,1 +1,4 @@
 /dist/
+/.project
+/build/classes/vista/Login.rs
+/build/classes/vista/PantallaInicio$1.class
