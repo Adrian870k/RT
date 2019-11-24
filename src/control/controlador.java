@@ -7,6 +7,7 @@ package control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JCheckBox;
 import logica.Preguntas;
 import model.modelo;
 
@@ -24,7 +25,6 @@ public class controlador implements ActionListener {
         this.chat = view;
         this.mod = mod;
         this.chat.jButtonPregunta1.addActionListener(this);
-        this.chat.jButtonPregunta2.addActionListener(this);
         this.chat.jButtonPregunta3.addActionListener(this);
     }
 
@@ -52,13 +52,7 @@ public class controlador implements ActionListener {
 
             chat.jButtonPregunta1.setText(sig.Preguntar(0));
 
-        } else if (control.equals(chat.jButtonPregunta2)) {
-            mod.setPreguntaDos(chat.jButtonPregunta2.getText());
-            mod.respuestaBoton2();
-            chat.jTextPaneCharla.setText(mod.getCuadroTexto());
-            chat.jButtonPregunta2.setText(sig.Preguntar(1));
-
-        } else if (control.equals(chat.jButtonPregunta3)) {
+        }  else if (control.equals(chat.jButtonPregunta3)) {
 
             mod.setPreguntaTres(chat.jButtonPregunta3.getText());
             mod.respuestaBoton3();
@@ -67,5 +61,8 @@ public class controlador implements ActionListener {
 
         }
     }
+   
+    
+    
 
 }
