@@ -12,9 +12,11 @@ package admin;
 public class adm {
     public static void main(String[] args) {
 //        user p = new user();
+     //   p.setTitle("Usuarios");
 //        p.setLocationRelativeTo(null);
 //        p.setVisible(true);
         salas s = new salas();
+        s.setTitle("Salas");
         s.setLocationRelativeTo(null);
         s.setVisible(true);
     }

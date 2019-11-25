@@ -38,14 +38,16 @@ public String recuros[] = new String[5];
         panelRecHor = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jLabel4 = new javax.swing.JLabel();
-        Dias = new javax.swing.JComboBox<>();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        Dias = new javax.swing.JComboBox<String>();
+        hora = new javax.swing.JComboBox<String>();
         jLabel6 = new javax.swing.JLabel();
         jCheckBox17 = new javax.swing.JCheckBox();
         panelPresentacion = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<String>();
         Reservar = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        actividad = new javax.swing.JComboBox<String>();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -82,20 +84,20 @@ public String recuros[] = new String[5];
         jLabel4.setText("Seleccione el dia");
         panelRecHor.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 11, -1, -1));
 
-        Dias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccione-", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" }));
+        Dias.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Seleccione-", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" }));
         Dias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DiasActionPerformed(evt);
             }
         });
-        panelRecHor.add(Dias, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 13, 98, -1));
+        panelRecHor.add(Dias, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 98, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccione-", "Desarrollo", "Redes", "Diseño", "Documentacion", "Base de datos" }));
-        panelRecHor.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 41, 98, -1));
+        hora.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Seleccione-", "06:00-7:00", "07:00-8:00", "09:00-10:00", "10:00-11:00", "12:00-13:00", "13:00-14:00", "15:00-16:00", "16:00-17:00", "18:00-19:00", "19:00-20:00", "21:00-22:00" }));
+        panelRecHor.add(hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 98, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel6.setText("Actividad:");
-        panelRecHor.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 39, -1, -1));
+        jLabel6.setText("Horario:");
+        panelRecHor.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         jCheckBox17.setText("¿Necesita presentacion?");
         jCheckBox17.addActionListener(new java.awt.event.ActionListener() {
@@ -103,12 +105,12 @@ public String recuros[] = new String[5];
                 jCheckBox17ActionPerformed(evt);
             }
         });
-        panelRecHor.add(jCheckBox17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 79, -1, -1));
+        panelRecHor.add(jCheckBox17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         jLabel3.setText("Recurso");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccione-", "Televisor", "Video Beam", "Parlantes" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Seleccione-", "Televisor", "Video Beam", "Parlantes" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -136,7 +138,7 @@ public String recuros[] = new String[5];
                 .addContainerGap())
         );
 
-        panelRecHor.add(panelPresentacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 240, 40));
+        panelRecHor.add(panelPresentacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 240, 40));
 
         Reservar.setText("Reservar");
         Reservar.addActionListener(new java.awt.event.ActionListener() {
@@ -145,6 +147,13 @@ public String recuros[] = new String[5];
             }
         });
         panelRecHor.add(Reservar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
+        jLabel7.setText("Actividad:");
+        panelRecHor.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 39, -1, -1));
+
+        actividad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Seleccione-", "Desarrollo", "Redes", "Diseño", "Documentacion", "Base de datos" }));
+        panelRecHor.add(actividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 98, -1));
 
         getContentPane().add(panelRecHor, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 350, 290));
 
@@ -176,7 +185,7 @@ public String recuros[] = new String[5];
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void ReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservarActionPerformed
-        
+        jTextPaneCharla.setText("Tu reserva quedo asignada asi:\nDía:"+Dias.getSelectedItem()+"\nHora:"+hora.getSelectedItem()+"\nActividad: "+actividad.getSelectedItem());
     }//GEN-LAST:event_ReservarActionPerformed
 
     /**
@@ -217,15 +226,17 @@ public String recuros[] = new String[5];
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JComboBox<String> Dias;
     private javax.swing.JButton Reservar;
+    public javax.swing.JComboBox<String> actividad;
+    public javax.swing.JComboBox<String> hora;
     public javax.swing.JButton jButtonPregunta1;
     public javax.swing.JButton jButtonPregunta3;
     private javax.swing.JCheckBox jCheckBox17;
-    public javax.swing.JComboBox<String> jComboBox1;
     public javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     public javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
