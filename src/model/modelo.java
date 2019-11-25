@@ -1,6 +1,6 @@
 package model;
 
-import logica.Preguntas;
+
 import vista.Chat.*;
 
 public class modelo {

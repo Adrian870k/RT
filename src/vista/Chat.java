@@ -12,13 +12,16 @@ import java.util.Arrays;
  * @author yordan.quintero
  */
 public class Chat extends javax.swing.JFrame {
-public String recuros[] = new String[5];
+
+    public String recuros[] = new String[5];
+    public String info;
+
     /**
      * Creates new form Chat
      */
     public Chat() {
         initComponents();
-        
+
     }
 
     /**
@@ -165,11 +168,15 @@ public String recuros[] = new String[5];
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonPregunta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPregunta1ActionPerformed
-        // TODO add your handling code here:
+
+        jTextPaneCharla.setText(info += "Selecciona las opciones para reservar \n");
+        panelRecHor.setVisible(true);
+
+
     }//GEN-LAST:event_jButtonPregunta1ActionPerformed
 
     private void jButtonPregunta3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPregunta3ActionPerformed
-        // TODO add your handling code here:
+        System.out.println(info);
     }//GEN-LAST:event_jButtonPregunta3ActionPerformed
 
     private void jCheckBox17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox17ActionPerformed
@@ -185,7 +192,8 @@ public String recuros[] = new String[5];
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void ReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservarActionPerformed
-        jTextPaneCharla.setText("Tu reserva quedo asignada asi:\nDía:"+Dias.getSelectedItem()+"\nHora:"+hora.getSelectedItem()+"\nActividad: "+actividad.getSelectedItem());
+        jTextPaneCharla.setText("Tu reserva quedo asignada asi:\nDía:" + Dias.getSelectedItem() + "\nHora:" + hora.getSelectedItem() + "\nActividad: " + actividad.getSelectedItem());
+        info = jTextPaneCharla.getText();
     }//GEN-LAST:event_ReservarActionPerformed
 
     /**

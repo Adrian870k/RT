@@ -8,7 +8,7 @@ package control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JCheckBox;
-import logica.Preguntas;
+
 import model.modelo;
 
 /**
@@ -35,32 +35,9 @@ public class controlador implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Preguntas sig = new Preguntas();
+        
 
-        Object control = e.getSource();
-        if (control.equals(chat.jButtonPregunta1)) {
-
-            mod.setPreguntaUno(chat.jButtonPregunta1.getText());
-
-            mod.respuestaBoton1();
-            
-
-            chat.jTextPaneCharla.setText(mod.getCuadroTexto());
-            chat.jTextPaneCharla.setText(model.modelo.cadenaDialogoOrganizada += "Selecciona las opciones para reservar \n");
-            chat.panelRecHor.setVisible(true);
-
-       
-
-            chat.jButtonPregunta1.setText(sig.Preguntar(0));
-
-        }  else if (control.equals(chat.jButtonPregunta3)) {
-
-            mod.setPreguntaTres(chat.jButtonPregunta3.getText());
-            mod.respuestaBoton3();
-           chat.jTextPaneCharla.setText(mod.getCuadroTexto());
-            chat.jButtonPregunta3.setText(sig.Preguntar(2));
-
-        }
+        
     }
     
     public void procesar(){

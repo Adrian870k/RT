@@ -6,7 +6,7 @@
 package mvc;
 
 import control.controlador;
-import logica.Preguntas;
+
 import model.modelo;
 import vista.Chat;
 
