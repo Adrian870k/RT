@@ -24,6 +24,11 @@ public class salas extends javax.swing.JFrame {
         btnactualizar = new javax.swing.JButton();
         btneliminar = new javax.swing.JButton();
         txtObservacion = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -38,6 +43,7 @@ public class salas extends javax.swing.JFrame {
                 "Id", "Nombre", "Capacidad", "Recursos", "Observaciones"
             }
         ));
+        datos.setEnabled(false);
         datos.setRowHeight(20);
         jScrollPane1.setViewportView(datos);
 
@@ -50,6 +56,12 @@ public class salas extends javax.swing.JFrame {
         txtnombreSala.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtnombreSalaActionPerformed(evt);
+            }
+        });
+
+        txtRecursos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRecursosActionPerformed(evt);
             }
         });
 
@@ -79,6 +91,16 @@ public class salas extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("ID");
+
+        jLabel2.setText("Nombre");
+
+        jLabel3.setText("Capacidad");
+
+        jLabel4.setText("Recursos");
+
+        jLabel5.setText("Observaciones");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,51 +108,64 @@ public class salas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jScrollPane1))
+                        .addGap(153, 153, 153)
+                        .addComponent(jLabel1)
+                        .addGap(64, 64, 64)
+                        .addComponent(jLabel2)
+                        .addGap(77, 77, 77)
+                        .addComponent(jLabel3)
+                        .addGap(76, 76, 76)
+                        .addComponent(jLabel4)
+                        .addGap(45, 45, 45)
+                        .addComponent(jLabel5))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addComponent(txtidSala, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(txtnombreSala, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(txtCapacidad, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(txtRecursos, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(txtObservacion, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(154, 154, 154)
                         .addComponent(btninsertar, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnactualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btneliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 182, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(127, 127, 127)
-                .addComponent(txtidSala, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(txtnombreSala, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(txtCapacidad, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(txtRecursos, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txtObservacion, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btneliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 763, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(22, 22, 22))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(11, 11, 11)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(5, 5, 5)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(txtidSala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtidSala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtnombreSala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCapacidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtRecursos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtObservacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(41, 41, 41)
+                    .addComponent(txtRecursos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtObservacion, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btninsertar)
                     .addComponent(btnactualizar)
                     .addComponent(btneliminar))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         pack();
@@ -162,12 +197,13 @@ public class salas extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btninsertarActionPerformed
     public void mostrar() {
-        String mat[][] = new String[listaSalas.size()][4];
+        String mat[][] = new String[listaSalas.size()][5];
         for (int i = 0; i < listaSalas.size(); i++) {
             mat[i][0] = listaSalas.get(i).getId();
             mat[i][1] = listaSalas.get(i).getNombre();
             mat[i][2] = listaSalas.get(i).getCapacidad();
-            mat[i][3] = listaSalas.get(i).getObservacion();
+            mat[i][3] = listaSalas.get(i).getRecurso();
+            mat[i][4] = listaSalas.get(i).getObservacion();
         }
         datos.setModel(new javax.swing.table.DefaultTableModel(
                 mat,
@@ -187,7 +223,7 @@ public class salas extends javax.swing.JFrame {
                     listaSalas.get(j).setCapacidad(txtCapacidad.getText());
                 }
                 if (!txtRecursos.getText().equals("")) {
-                    listaSalas.get(j).setDescripcion(txtRecursos.getText());
+                    listaSalas.get(j).setRecurso(txtRecursos.getText());
                 }
                 if (!txtObservacion.getText().equals("")) {
                     listaSalas.get(j).setObservacion(txtObservacion.getText());
@@ -212,6 +248,10 @@ public class salas extends javax.swing.JFrame {
 
         mostrar();
     }//GEN-LAST:event_btneliminarActionPerformed
+
+    private void txtRecursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRecursosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRecursosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,6 +293,11 @@ public class salas extends javax.swing.JFrame {
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btninsertar;
     private javax.swing.JTable datos;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtCapacidad;
     public javax.swing.JTextField txtObservacion;

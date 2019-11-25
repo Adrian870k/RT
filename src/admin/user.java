@@ -52,6 +52,7 @@ public class user extends javax.swing.JFrame {
                 "Id", "Nombre", "Clave", "Rol"
             }
         ));
+        datos.setEnabled(false);
         jScrollPane1.setViewportView(datos);
 
         txtid.addActionListener(new java.awt.event.ActionListener() {

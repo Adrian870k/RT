@@ -11,13 +11,13 @@ package admin;
  */
 public class sala {
     
-    String id,nombre,capacidad,descripcion,observacion; 
+    String id,nombre,capacidad,recurso,observacion; 
 
-    public sala(String id, String nombre, String capacidad, String descripcion, String observacion) {
+    public sala(String id, String nombre, String capacidad, String recurso, String observacion) {
         this.id = id;
         this.nombre = nombre;
         this.capacidad = capacidad;
-        this.descripcion = descripcion;
+        this.recurso = recurso;
         this.observacion = observacion;
     }
 
@@ -45,12 +45,12 @@ public class sala {
         this.capacidad = capacidad;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getRecurso() {
+        return recurso;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setRecurso(String recurso) {
+        this.recurso = recurso;
     }
 
     public String getObservacion() {
