@@ -46,7 +46,8 @@ public class controlador implements ActionListener {
             
 
             chat.jTextPaneCharla.setText(mod.getCuadroTexto());
-            chat.jTextPaneCharla.setText(model.modelo.cadenaDialogoOrganizada += "Cual sala deseas reservar \n");
+            chat.jTextPaneCharla.setText(model.modelo.cadenaDialogoOrganizada += "Selecciona las opciones para reservar \n");
+            chat.panelRecHor.setVisible(true);
 
        
 
@@ -60,6 +61,11 @@ public class controlador implements ActionListener {
             chat.jButtonPregunta3.setText(sig.Preguntar(2));
 
         }
+    }
+    
+    public void procesar(){
+    
+        
     }
    
     

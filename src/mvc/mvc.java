@@ -19,6 +19,8 @@ public class mvc {
         modelo md = new modelo();
         Chat ch = new Chat();
         ch.setLocationRelativeTo(null);
+        ch.panelPresentacion.setVisible(false);
+        ch.panelRecHor.setVisible(false);
         controlador ctr = new controlador(ch, md);
 
         ctr.inicio();

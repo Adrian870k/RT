@@ -5,11 +5,15 @@
  */
 package Vista;
 
+import BD.conexion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -17,16 +21,20 @@ import javax.swing.table.DefaultTableModel;
  * @author hp
  */
 public class rt extends javax.swing.JFrame {
+
     DefaultTableModel dtm = new DefaultTableModel();
+    Connection con;
+
     /**
      * Creates new form Soul
      */
     public rt() throws SQLException {
         initComponents();
-        String[] titulo = new String[]{"ID","NOMBRE","RAZA","EDAD"};
+        String[] titulo = new String[]{"ID", "NOMBRE", "CLAVE", "ROL"};
         dtm.setColumnIdentifiers(titulo);
         datos.setModel(dtm);
         cargar();
+
     }
 
     /**
@@ -152,19 +160,31 @@ public class rt extends javax.swing.JFrame {
 
     private void btninsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninsertarActionPerformed
         try {
-            Statement stm = BD.conexion.getConnection().createStatement();
-            stm.execute("insert into usuarios values('"+Integer.parseInt(txtid.getText())+"','"+txtnombre.getText()+"','"+txtClave.getText()+"','"+txtRol.getText()+"')");
+
+            String sql = "insert into users (nombre, clave, rol)values(?,?,?)";
+            PreparedStatement pst = BD.conexion.obtenConnection().prepareStatement(sql);
+
+            pst.setString(1, txtnombre.getText());
+            pst.setString(2, txtClave.getText());
+            pst.setString(3, txtRol.getText());
+            int n = pst.executeUpdate();
+            
+            System.out.println(n);
             cargar();
+            
+            
         } catch (Exception e) {
+            System.out.println(e);
+            
         }
     }//GEN-LAST:event_btninsertarActionPerformed
 
     private void btnactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarActionPerformed
         try {
-            System.out.println("update usuarios set nombre ='"+txtnombre.getText()+"' , clave ='"+txtClave.getText()+"', tipo_usuario = '"+txtRol.getText()+"' where id = '"+Integer.parseInt(txtid.getText())+"'");
-            Statement stm = BD.conexion.getConnection().createStatement();
-            stm.execute("update usuarios set nombre ='"+txtnombre.getText()+"' , clave ='"+txtClave.getText()+"', tipo_usuario = '"+txtRol.getText()+"' where id = '"+Integer.parseInt(txtid.getText())+"'");
-            
+
+            Statement stm = BD.conexion.obtenConnection().createStatement();
+            stm.execute("update users set nombre ='" + txtnombre.getText() + "' , clave ='" + txtClave.getText() + "', tipo_usuario = '" + txtRol.getText() + "' where id = '" + Integer.parseInt(txtid.getText()) + "'");
+
             cargar();
         } catch (Exception e) {
         }
@@ -172,8 +192,8 @@ public class rt extends javax.swing.JFrame {
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
         try {
-            Statement stm = BD.conexion.getConnection().createStatement();
-            stm.execute("delete  from usuarios where id = '"+txtid.getText()+"'");
+            Statement stm = BD.conexion.obtenConnection().createStatement();
+            stm.execute("delete  from users where id = '" + txtid.getText() + "'");
             cargar();
         } catch (Exception e) {
         }
@@ -211,11 +231,9 @@ public class rt extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    
+
                     new rt().setVisible(true);
-                    
-                     
-                    
+
                 } catch (SQLException ex) {
                     Logger.getLogger(rt.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -236,19 +254,20 @@ public class rt extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void cargar() throws SQLException {
-        Statement stm = BD.conexion.getConnection().createStatement();
-        ResultSet rst = stm.executeQuery("select * from usuarios");
+        Statement stm = BD.conexion.obtenConnection().createStatement();
+        ResultSet rst = stm.executeQuery("select * from users");
         limpiar();
         while (rst.next()) {
             dtm.addRow(new Object[]{
-            rst.getInt(1),
-            rst.getString(2),
-            rst.getString(3),
-            rst.getString(4)
+                rst.getInt(1),
+                rst.getString(2),
+                rst.getString(3),
+                rst.getString(4)
             });
-            
+
         }
-        
+        BD.conexion.obtenConnection().close();
+
     }
 
     private void limpiar() {
