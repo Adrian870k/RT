@@ -235,7 +235,7 @@ public class rt extends javax.swing.JFrame {
     private javax.swing.JTable datos;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtClave;
-    private javax.swing.JTextField txtRol;
+    public javax.swing.JTextField txtRol;
     private javax.swing.JTextField txtid;
     private javax.swing.JTextField txtnombre;
     // End of variables declaration//GEN-END:variables
