@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class salas extends javax.swing.JFrame {
 
-    ArrayList<sala> lista = new ArrayList<sala>();
+    ArrayList<sala> listaSalas = new ArrayList<sala>();
 
     public salas() {
         initComponents();
@@ -150,7 +150,7 @@ public class salas extends javax.swing.JFrame {
 
     private void btninsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninsertarActionPerformed
         sala s = new sala(txtidSala.getText(), txtnombreSala.getText(), txtCapacidad.getText(), txtRecursos.getText(), txtObservacion.getText());
-        lista.add(s);
+        listaSalas.add(s);
 
         mostrar();
 
@@ -159,32 +159,51 @@ public class salas extends javax.swing.JFrame {
         txtCapacidad.setText("");
         txtRecursos.setText("");
         txtObservacion.setText("");
-        
+
     }//GEN-LAST:event_btninsertarActionPerformed
     public void mostrar() {
-        String mat[][] = new String[lista.size()][4];
-        for (int i = 0; i < lista.size(); i++) {
-            mat[i][0] = lista.get(i).getId();
-            mat[i][1] = lista.get(i).getNombre();
-            mat[i][2] = lista.get(i).getCapacidad();
-            mat[i][3] = lista.get(i).getObservacion();
+        String mat[][] = new String[listaSalas.size()][4];
+        for (int i = 0; i < listaSalas.size(); i++) {
+            mat[i][0] = listaSalas.get(i).getId();
+            mat[i][1] = listaSalas.get(i).getNombre();
+            mat[i][2] = listaSalas.get(i).getCapacidad();
+            mat[i][3] = listaSalas.get(i).getObservacion();
         }
         datos.setModel(new javax.swing.table.DefaultTableModel(
                 mat,
                 new String[]{
-                    "Id", "Nombre", "Clave", "Rol"
+                    "Id", "Nombre sala", "Capacidad", "Recursos","Observaciones"
                 }
         ));
     }
     private void btnactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarActionPerformed
+        for (int j = 0; j < listaSalas.size(); j++) {
+            if (listaSalas.get(j).getId().equals(txtidSala.getText())) {
 
+                if (!txtnombreSala.getText().equals("")) {
+                    listaSalas.get(j).setNombre(txtnombreSala.getText());
+                }
+                if (!txtCapacidad.getText().equals("")) {
+                    listaSalas.get(j).setCapacidad(txtCapacidad.getText());
+                }
+                if (!txtRecursos.getText().equals("")) {
+                    listaSalas.get(j).setDescripcion(txtRecursos.getText());
+                }
+                if (!txtObservacion.getText().equals("")) {
+                    listaSalas.get(j).setObservacion(txtObservacion.getText());
+                }
+            }
+
+        }
+
+        mostrar();
     }//GEN-LAST:event_btnactualizarActionPerformed
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
 
-        for (int j = 0; j < lista.size(); j++) {
-            if (lista.get(j).getId().equals(txtidSala.getText())) {
-                lista.remove(j);
+        for (int j = 0; j < listaSalas.size(); j++) {
+            if (listaSalas.get(j).getId().equals(txtidSala.getText())) {
+                listaSalas.remove(j);
             } else {
                 System.out.println("lakjlk");
             }

@@ -179,19 +179,33 @@ public class user extends javax.swing.JFrame {
         ));
     }
     private void btnactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarActionPerformed
+        for (int j = 0; j < lista.size(); j++) {
+            if (lista.get(j).getId().equals(txtid.getText())) {
 
+                if (!txtnombre.getText().equals("")) {
+                    lista.get(j).setNombre(txtnombre.getText());
+                }
+                if (!txtClave.getText().equals("")) {
+                    lista.get(j).setClave(txtClave.getText());
+                }
+                if (!txtRol.getText().equals("")) {
+                    lista.get(j).setRol(txtRol.getText());
+                }
+            }
+
+        }
+
+        mostrar();
     }//GEN-LAST:event_btnactualizarActionPerformed
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
-       
 
         for (int j = 0; j < lista.size(); j++) {
-            if (lista.get(j).getId().equals(txtid.getText()) ) {
+            if (lista.get(j).getId().equals(txtid.getText())) {
                 lista.remove(j);
-            }else{
+            } else {
                 System.out.println("lakjlk");
             }
-          
 
         }
 
