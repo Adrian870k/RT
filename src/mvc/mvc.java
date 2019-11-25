@@ -16,20 +16,17 @@ import vista.Chat;
  */
 public class mvc {
     public static void main(String[] args) {
-        
         modelo md = new modelo();
         Chat ch = new Chat();
-       ch.setLocationRelativeTo(null);
+        ch.setLocationRelativeTo(null);
+        ch.panelPresentacion.setVisible(false);
+        ch.panelRecHor.setVisible(false);
         controlador ctr = new controlador(ch, md);
-        
-      
+
         ctr.inicio();
-        
+
         ch.setVisible(true);
-        
-   
-      
-      
+
     }
-    
+
 }

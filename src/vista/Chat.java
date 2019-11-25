@@ -5,17 +5,20 @@
  */
 package vista;
 
+import java.util.Arrays;
+
 /**
  *
  * @author yordan.quintero
  */
 public class Chat extends javax.swing.JFrame {
-
+public String recuros[] = new String[5];
     /**
      * Creates new form Chat
      */
     public Chat() {
         initComponents();
+        
     }
 
     /**
@@ -27,40 +30,22 @@ public class Chat extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         jButtonPregunta1 = new javax.swing.JButton();
-        jButtonPregunta2 = new javax.swing.JButton();
         jButtonPregunta3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPaneCharla = new javax.swing.JTextPane();
-        jTextPane = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        panelRecHor = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jPanel6 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jCheckBox12 = new javax.swing.JCheckBox();
-        jCheckBox13 = new javax.swing.JCheckBox();
-        jCheckBox14 = new javax.swing.JCheckBox();
-        jCheckBox15 = new javax.swing.JCheckBox();
-        jCheckBox16 = new javax.swing.JCheckBox();
+        jLabel4 = new javax.swing.JLabel();
+        Dias = new javax.swing.JComboBox<>();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
         jCheckBox17 = new javax.swing.JCheckBox();
-        jCheckBox18 = new javax.swing.JCheckBox();
-        jCheckBox19 = new javax.swing.JCheckBox();
-        jCheckBox20 = new javax.swing.JCheckBox();
+        panelPresentacion = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
-        jCheckBox11 = new javax.swing.JCheckBox();
-        jCheckBox10 = new javax.swing.JCheckBox();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        Reservar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -76,14 +61,6 @@ public class Chat extends javax.swing.JFrame {
         });
         jPanel2.add(jButtonPregunta1);
 
-        jButtonPregunta2.setText("¿Cuales salas estan disponibles?");
-        jButtonPregunta2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonPregunta2ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButtonPregunta2);
-
         jButtonPregunta3.setText("Mis reservas");
         jButtonPregunta3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,142 +69,88 @@ public class Chat extends javax.swing.JFrame {
         });
         jPanel2.add(jButtonPregunta3);
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 28, 200, -1));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 88, 250, 60));
 
         jScrollPane1.setViewportView(jTextPaneCharla);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 454, 430));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 454, 450));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        jLabel2.setText("Escoja los recursos");
+        panelRecHor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelRecHor.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 470, 130, 143));
 
-        jPanel7.setLayout(new java.awt.GridLayout(0, 1, 1, 0));
+        jLabel4.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
+        jLabel4.setText("Seleccione el dia");
+        panelRecHor.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 11, -1, -1));
 
-        jCheckBox12.setText("jCheckBox3");
-        jPanel7.add(jCheckBox12);
+        Dias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccione-", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" }));
+        Dias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DiasActionPerformed(evt);
+            }
+        });
+        panelRecHor.add(Dias, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 13, 98, -1));
 
-        jCheckBox13.setText("jCheckBox4");
-        jPanel7.add(jCheckBox13);
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccione-", "Desarrollo", "Redes", "Diseño", "Documentacion", "Base de datos" }));
+        panelRecHor.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 41, 98, -1));
 
-        jCheckBox14.setText("jCheckBox5");
-        jPanel7.add(jCheckBox14);
+        jLabel6.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
+        jLabel6.setText("Actividad:");
+        panelRecHor.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 39, -1, -1));
 
-        jCheckBox15.setText("jCheckBox6");
-        jPanel7.add(jCheckBox15);
+        jCheckBox17.setText("¿Necesita presentacion?");
+        jCheckBox17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox17ActionPerformed(evt);
+            }
+        });
+        panelRecHor.add(jCheckBox17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 79, -1, -1));
 
-        jCheckBox16.setText("jCheckBox7");
-        jPanel7.add(jCheckBox16);
+        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        jLabel3.setText("Recurso");
 
-        jCheckBox17.setText("jCheckBox8");
-        jPanel7.add(jCheckBox17);
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccione-", "Televisor", "Video Beam", "Parlantes" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
 
-        jCheckBox18.setText("jCheckBox9");
-        jPanel7.add(jCheckBox18);
-
-        jCheckBox19.setText("jCheckBox11");
-        jPanel7.add(jCheckBox19);
-
-        jCheckBox20.setText("jCheckBox10");
-        jPanel7.add(jCheckBox20);
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 78, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        jScrollPane3.setViewportView(jPanel6);
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        jLabel3.setText("Seleccione el horario");
-
-        jPanel5.setLayout(new java.awt.GridLayout(0, 1, 1, 0));
-
-        jCheckBox3.setText("jCheckBox3");
-        jPanel5.add(jCheckBox3);
-
-        jCheckBox4.setText("jCheckBox4");
-        jPanel5.add(jCheckBox4);
-
-        jCheckBox5.setText("jCheckBox5");
-        jPanel5.add(jCheckBox5);
-
-        jCheckBox6.setText("jCheckBox6");
-        jPanel5.add(jCheckBox6);
-
-        jCheckBox7.setText("jCheckBox7");
-        jPanel5.add(jCheckBox7);
-
-        jCheckBox8.setText("jCheckBox8");
-        jPanel5.add(jCheckBox8);
-
-        jCheckBox9.setText("jCheckBox9");
-        jPanel5.add(jCheckBox9);
-
-        jCheckBox11.setText("jCheckBox11");
-        jPanel5.add(jCheckBox11);
-
-        jCheckBox10.setText("jCheckBox10");
-        jPanel5.add(jCheckBox10);
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 78, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        jScrollPane2.setViewportView(jPanel4);
-
-        javax.swing.GroupLayout jTextPaneLayout = new javax.swing.GroupLayout(jTextPane);
-        jTextPane.setLayout(jTextPaneLayout);
-        jTextPaneLayout.setHorizontalGroup(
-            jTextPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jTextPaneLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(jTextPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2))
-                .addContainerGap(69, Short.MAX_VALUE))
-        );
-        jTextPaneLayout.setVerticalGroup(
-            jTextPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jTextPaneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        javax.swing.GroupLayout panelPresentacionLayout = new javax.swing.GroupLayout(panelPresentacion);
+        panelPresentacion.setLayout(panelPresentacionLayout);
+        panelPresentacionLayout.setHorizontalGroup(
+            panelPresentacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelPresentacionLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
+        );
+        panelPresentacionLayout.setVerticalGroup(
+            panelPresentacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPresentacionLayout.createSequentialGroup()
+                .addGap(4, 4, 4)
+                .addGroup(panelPresentacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
                 .addContainerGap())
         );
 
-        getContentPane().add(jTextPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 110, 280, 320));
+        panelRecHor.add(panelPresentacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 240, 40));
+
+        Reservar.setText("Reservar");
+        Reservar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReservarActionPerformed(evt);
+            }
+        });
+        panelRecHor.add(Reservar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, -1, -1));
+
+        getContentPane().add(panelRecHor, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 350, 290));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel1.setText("Escoge una pregunta");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 184, 27));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, 184, 27));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -236,13 +159,25 @@ public class Chat extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonPregunta1ActionPerformed
 
-    private void jButtonPregunta2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPregunta2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonPregunta2ActionPerformed
-
     private void jButtonPregunta3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPregunta3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonPregunta3ActionPerformed
+
+    private void jCheckBox17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox17ActionPerformed
+        panelPresentacion.setVisible(true);
+    }//GEN-LAST:event_jCheckBox17ActionPerformed
+
+    private void DiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DiasActionPerformed
+        System.out.println(Dias.getSelectedItem());
+    }//GEN-LAST:event_DiasActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void ReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservarActionPerformed
+        
+    }//GEN-LAST:event_ReservarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -280,40 +215,22 @@ public class Chat extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
+    public javax.swing.JComboBox<String> Dias;
+    private javax.swing.JButton Reservar;
     public javax.swing.JButton jButtonPregunta1;
-    public javax.swing.JButton jButtonPregunta2;
     public javax.swing.JButton jButtonPregunta3;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox11;
-    private javax.swing.JCheckBox jCheckBox12;
-    private javax.swing.JCheckBox jCheckBox13;
-    private javax.swing.JCheckBox jCheckBox14;
-    private javax.swing.JCheckBox jCheckBox15;
-    private javax.swing.JCheckBox jCheckBox16;
     private javax.swing.JCheckBox jCheckBox17;
-    private javax.swing.JCheckBox jCheckBox18;
-    private javax.swing.JCheckBox jCheckBox19;
-    private javax.swing.JCheckBox jCheckBox20;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
+    public javax.swing.JComboBox<String> jComboBox1;
+    public javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
+    public javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JPanel jTextPane;
     public javax.swing.JTextPane jTextPaneCharla;
+    public javax.swing.JPanel panelPresentacion;
+    public javax.swing.JPanel panelRecHor;
     // End of variables declaration//GEN-END:variables
 }
