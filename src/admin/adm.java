@@ -11,12 +11,12 @@ package admin;
  */
 public class adm {
     public static void main(String[] args) {
-        user p = new user();
-        p.setLocationRelativeTo(null);
-        p.setVisible(true);
-//        salas s = new salas();
-//        s.setLocationRelativeTo(null);
-//        s.setVisible(true);
+//        user p = new user();
+//        p.setLocationRelativeTo(null);
+//        p.setVisible(true);
+        salas s = new salas();
+        s.setLocationRelativeTo(null);
+        s.setVisible(true);
     }
     
 }
