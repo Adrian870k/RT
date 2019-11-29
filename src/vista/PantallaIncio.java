@@ -6,6 +6,7 @@
 package vista;
 
 import admin.salas;
+import admin.user;
 import java.io.File;
 import javax.swing.ImageIcon;
 
@@ -362,6 +363,11 @@ public class PantallaIncio extends javax.swing.JFrame {
         panelprincipal.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, -1, -1));
 
         jLabel7.setText("jLabel7");
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
         panelprincipal.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, -1, -1));
 
         jLabel8.setText("jLabel8");
@@ -448,6 +454,13 @@ public class PantallaIncio extends javax.swing.JFrame {
         s.setLocationRelativeTo(null);
         s.setVisible(true);
     }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+      admin.user frame = new user();
+      frame.setLocationRelativeTo(null);
+      frame.setVisible(true);
+      PantallaIncio.this.disable();
+    }//GEN-LAST:event_jLabel7MouseClicked
 
     /**
      * @param args the command line arguments

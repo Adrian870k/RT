@@ -12,9 +12,10 @@ import vista.Horarios;
  * @author yordan.quintero
  */
 public class adm {
+
     public static void main(String[] args) {
 //        user p = new user();
-     //   p.setTitle("Usuarios");
+        //   p.setTitle("Usuarios");
 //        p.setLocationRelativeTo(null);
 //        p.setVisible(true);
 //        salas s = new salas();
@@ -22,16 +23,13 @@ public class adm {
 //        s.setTitle("Salas");
 //        s.setLocationRelativeTo(null);
 //        s.setVisible(true);
-        
+
         Horarios a = new Horarios();
-          a.setTitle("Salas");
+        a.setTitle("Salas");
         a.setLocationRelativeTo(null);
         a.setVisible(true);
         a.mostrarHorarios();
-       
-        
-        
-        
+
     }
-    
+
 }
