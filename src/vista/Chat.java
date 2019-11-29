@@ -192,6 +192,8 @@ public class Chat extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void ReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservarActionPerformed
+        String act = actividad.getSelectedItem().toString();
+        
         jTextPaneCharla.setText("Tu reserva quedo asignada asi:\nDía:" + Dias.getSelectedItem() + "\nHora:" + hora.getSelectedItem() + "\nActividad: " + actividad.getSelectedItem());
         info = jTextPaneCharla.getText();
     }//GEN-LAST:event_ReservarActionPerformed

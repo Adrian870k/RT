@@ -5,6 +5,8 @@
  */
 package admin;
 
+import vista.Horarios;
+
 /**
  *
  * @author yordan.quintero
@@ -15,10 +17,21 @@ public class adm {
      //   p.setTitle("Usuarios");
 //        p.setLocationRelativeTo(null);
 //        p.setVisible(true);
-        salas s = new salas();
-        s.setTitle("Salas");
-        s.setLocationRelativeTo(null);
-        s.setVisible(true);
+//        salas s = new salas();
+//        
+//        s.setTitle("Salas");
+//        s.setLocationRelativeTo(null);
+//        s.setVisible(true);
+        
+        Horarios a = new Horarios();
+          a.setTitle("Salas");
+        a.setLocationRelativeTo(null);
+        a.setVisible(true);
+        a.mostrarHorarios();
+       
+        
+        
+        
     }
     
 }

@@ -9,6 +9,7 @@ import control.controlador;
 
 import model.modelo;
 import vista.Chat;
+import Vista.Login;
 
 /**
  *
@@ -16,16 +17,20 @@ import vista.Chat;
  */
 public class mvc {
     public static void main(String[] args) {
-        modelo md = new modelo();
-        Chat ch = new Chat();
+        
+        Login ch = new Login();
         ch.setLocationRelativeTo(null);
-        ch.panelPresentacion.setVisible(false);
-        ch.panelRecHor.setVisible(false);
-        controlador ctr = new controlador(ch, md);
-
-        ctr.inicio();
-
         ch.setVisible(true);
+//        modelo md = new modelo();
+//        Chat ch = new Chat();
+//        ch.setLocationRelativeTo(null);
+//        ch.panelPresentacion.setVisible(false);
+//        ch.panelRecHor.setVisible(false);
+//        controlador ctr = new controlador(ch, md);
+//
+//        ctr.inicio();
+//
+//        ch.setVisible(true);
 
     }
 

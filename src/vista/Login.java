@@ -5,8 +5,10 @@
  */
 package Vista;
 
+import admin.salas;
 import java.io.File;
 import javax.swing.JOptionPane;
+import Vista.PantallaIncioMaestro;
 
 /**
  *
@@ -128,6 +130,12 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel2.add(labelEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, -1, -1));
+
+        IconEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                IconEntrarMouseClicked(evt);
+            }
+        });
         jPanel2.add(IconEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, 30, 30));
 
         JtextPassword.setBackground(new java.awt.Color(204, 204, 255));
@@ -152,16 +160,21 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_JtextUsernameActionPerformed
 
     private void IconoMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconoMinimizarMouseClicked
-         this.setExtendedState(ICONIFIED);
+        this.setExtendedState(ICONIFIED);
     }//GEN-LAST:event_IconoMinimizarMouseClicked
 
     private void labelEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelEntrarMouseClicked
         NombreUsuario = JtextUsername.getText();
         PasswordUsuario = JtextPassword.getText();
-        
+
         if ("yordan.quintero".equals(NombreUsuario) && "laclave".equals(PasswordUsuario)) {
-            vista.PantallaIncio frame2 = new vista.PantallaIncio();
-            frame2.setVisible(true);
+            PantallaIncioMaestro frame = new PantallaIncioMaestro();
+            frame.setVisible(true);
+            Login.this.dispose();
+        } else if ("yordan".equals(NombreUsuario) && "pass".equals(PasswordUsuario)) {
+            vista.PantallaIncio frame1 = new vista.PantallaIncio();
+//            admin.salas frame2 = new salas();
+            frame1.setVisible(true);
             Login.this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta");
@@ -177,12 +190,16 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_IconCerrarMouseClicked
 
     private void jPanel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseEntered
-      
+
     }//GEN-LAST:event_jPanel2MouseEntered
 
     private void labelEntrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_labelEntrarKeyPressed
-      
+
     }//GEN-LAST:event_labelEntrarKeyPressed
+
+    private void IconEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconEntrarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IconEntrarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -206,7 +223,7 @@ public class Login extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
         //</editor-fold>
 
         /* Create and display the form */
