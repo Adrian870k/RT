@@ -14,13 +14,11 @@ import java.util.Arrays;
 public class Chat extends javax.swing.JFrame {
 
     public String recuros[] = new String[5];
-    public String info;
+    public String info = "";
 
-    /**
-     * Creates new form Chat
-     */
     public Chat() {
         initComponents();
+        this.setLocationRelativeTo(null);
 
     }
 
@@ -172,7 +170,6 @@ public class Chat extends javax.swing.JFrame {
         jTextPaneCharla.setText(info += "Selecciona las opciones para reservar \n");
         panelRecHor.setVisible(true);
 
-
     }//GEN-LAST:event_jButtonPregunta1ActionPerformed
 
     private void jButtonPregunta3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPregunta3ActionPerformed
@@ -193,9 +190,9 @@ public class Chat extends javax.swing.JFrame {
 
     private void ReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservarActionPerformed
         String act = actividad.getSelectedItem().toString();
-        
+
         jTextPaneCharla.setText("Tu reserva quedo asignada asi:\nDía:" + Dias.getSelectedItem() + "\nHora:" + hora.getSelectedItem() + "\nActividad: " + actividad.getSelectedItem());
-        info = jTextPaneCharla.getText();
+        info += jTextPaneCharla.getText();
     }//GEN-LAST:event_ReservarActionPerformed
 
     /**
@@ -209,7 +206,7 @@ public class Chat extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

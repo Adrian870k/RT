@@ -167,7 +167,7 @@ public class Login extends javax.swing.JFrame {
         NombreUsuario = JtextUsername.getText();
         PasswordUsuario = JtextPassword.getText();
 
-        if ("yordan.quintero".equals(NombreUsuario) && "laclave".equals(PasswordUsuario)) {
+        if ("abc".equals(NombreUsuario) && "abc".equals(PasswordUsuario)) {
             PantallaIncioMaestro frame = new PantallaIncioMaestro();
             frame.setVisible(true);
             Login.this.dispose();

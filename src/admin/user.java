@@ -39,7 +39,7 @@ public class user extends javax.swing.JFrame {
         btneliminar = new javax.swing.JButton();
         txtRol = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         datos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
