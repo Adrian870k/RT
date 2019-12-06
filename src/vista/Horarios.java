@@ -162,7 +162,7 @@ public class Horarios extends javax.swing.JFrame {
     public void mostrarHorarios() {
        
         ListaSimple.Nodo aux = primerElem;
-        String[][] m = new String[16][3];
+        String[][] m = new String[11][3];
        
         
         horariosDatos.setModel(new javax.swing.table.DefaultTableModel(

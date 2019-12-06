@@ -5,6 +5,7 @@
  */
 package vista;
 
+import ListaSimple.lista;
 import java.util.Arrays;
 
 /**
@@ -76,7 +77,7 @@ public class Chat extends javax.swing.JFrame {
         jLabel4.setText("Seleccione el dia");
         panelRecHor.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 11, -1, -1));
 
-        Dias.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Seleccione-", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" }));
+        Dias.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" }));
         Dias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DiasActionPerformed(evt);
@@ -84,7 +85,7 @@ public class Chat extends javax.swing.JFrame {
         });
         panelRecHor.add(Dias, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 98, -1));
 
-        hora.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Seleccione-", "06:00-7:00", "07:00-8:00", "09:00-10:00", "10:00-11:00", "12:00-13:00", "13:00-14:00", "15:00-16:00", "16:00-17:00", "18:00-19:00", "19:00-20:00", "21:00-22:00" }));
+        hora.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06:00-7:00", "07:00-8:00", "09:00-10:00", "10:00-11:00", "12:00-13:00", "13:00-14:00", "15:00-16:00", "16:00-17:00", "18:00-19:00", "19:00-20:00", "21:00-22:00" }));
         panelRecHor.add(hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 98, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
@@ -144,7 +145,7 @@ public class Chat extends javax.swing.JFrame {
         jLabel7.setText("Actividad:");
         panelRecHor.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 39, -1, -1));
 
-        actividad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Seleccione-", "Desarrollo", "Redes", "Diseño", "Documentacion", "Base de datos" }));
+        actividad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Desarrollo", "Redes", "Diseño", "Documentacion", "Base de datos" }));
         panelRecHor.add(actividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 98, -1));
 
         getContentPane().add(panelRecHor, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 350, 290));
@@ -177,7 +178,17 @@ public class Chat extends javax.swing.JFrame {
 
     private void ReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservarActionPerformed
         String act = actividad.getSelectedItem().toString();
-
+        int hr = hora.getSelectedIndex();
+        int di = Dias.getSelectedIndex();
+        
+        ListaSimple.lista l = new ListaSimple.lista();
+       String asd =  mvc.mvc.p.reservar(act, hr, di);
+        
+      
+            System.out.println(asd);
+       
+        
+        
        
         
         jTextPaneCharla.setText("Tu reserva quedo asignada asi:\nDía:" + Dias.getSelectedItem() + "\nHora:" + hora.getSelectedItem() + "\nActividad: " + actividad.getSelectedItem());

@@ -9,10 +9,12 @@ import java.util.ArrayList;
 /**
  * @author yordan.quintero
  */
+
 public class mvc {
 
     public static ArrayList<sala> listaSalas = new ArrayList<>();
     public static ArrayList<Persona> lista = new ArrayList();
+    public static lista p = new lista();
 
     public static void main(String[] args) {
 
@@ -40,10 +42,12 @@ public class mvc {
         mvc.lista.add(ae);
         mvc.lista.add(af);
         
-        lista p = new lista();
+        
+        
+        
         
         for (int i = 0; i < listaSalas.size(); i++) {
-            String [][] m = new String[16][6];
+            String [][] m = new String[11][6];
             p.insertar(mvc.listaSalas.get(i).getNombre(), m , mvc.listaSalas.get(i).getRecurso());
         }
         
