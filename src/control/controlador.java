@@ -25,7 +25,7 @@ public class controlador implements ActionListener {
         this.chat = view;
         this.mod = mod;
         this.chat.jButtonPregunta1.addActionListener(this);
-        this.chat.jButtonPregunta3.addActionListener(this);
+      
     }
 
     public void inicio() {

@@ -33,7 +33,6 @@ public class Chat extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jButtonPregunta1 = new javax.swing.JButton();
-        jButtonPregunta3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPaneCharla = new javax.swing.JTextPane();
         panelRecHor = new javax.swing.JPanel();
@@ -51,7 +50,7 @@ public class Chat extends javax.swing.JFrame {
         actividad = new javax.swing.JComboBox<String>();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setLayout(new java.awt.GridLayout(0, 1));
@@ -64,15 +63,7 @@ public class Chat extends javax.swing.JFrame {
         });
         jPanel2.add(jButtonPregunta1);
 
-        jButtonPregunta3.setText("Mis reservas");
-        jButtonPregunta3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonPregunta3ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButtonPregunta3);
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 88, 250, 60));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 88, 250, 40));
 
         jScrollPane1.setViewportView(jTextPaneCharla);
 
@@ -172,10 +163,6 @@ public class Chat extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButtonPregunta1ActionPerformed
 
-    private void jButtonPregunta3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPregunta3ActionPerformed
-        System.out.println(info);
-    }//GEN-LAST:event_jButtonPregunta3ActionPerformed
-
     private void jCheckBox17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox17ActionPerformed
         panelPresentacion.setVisible(true);
     }//GEN-LAST:event_jCheckBox17ActionPerformed
@@ -191,6 +178,8 @@ public class Chat extends javax.swing.JFrame {
     private void ReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservarActionPerformed
         String act = actividad.getSelectedItem().toString();
 
+       
+        
         jTextPaneCharla.setText("Tu reserva quedo asignada asi:\nDía:" + Dias.getSelectedItem() + "\nHora:" + hora.getSelectedItem() + "\nActividad: " + actividad.getSelectedItem());
         info += jTextPaneCharla.getText();
     }//GEN-LAST:event_ReservarActionPerformed
@@ -236,7 +225,6 @@ public class Chat extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> actividad;
     public javax.swing.JComboBox<String> hora;
     public javax.swing.JButton jButtonPregunta1;
-    public javax.swing.JButton jButtonPregunta3;
     private javax.swing.JCheckBox jCheckBox17;
     public javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;

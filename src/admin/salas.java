@@ -1,11 +1,13 @@
 package admin;
 
 import ListaSimple.lista;
+import Vista.Login;
+import Vista.PantallaIncioMaestro;
 import java.util.ArrayList;
+import vista.PantallaIncio;
+import mvc.mvc;
 
 public class salas extends javax.swing.JFrame {
-
-    public ArrayList<sala> listaSalas = new ArrayList<sala>();
 
     public salas() {
         initComponents();
@@ -31,6 +33,7 @@ public class salas extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -110,6 +113,18 @@ public class salas extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("s");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -119,8 +134,9 @@ public class salas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 763, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(134, 134, 134)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(86, 86, 86)
                             .addComponent(btninsertar, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(btnactualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -183,7 +199,9 @@ public class salas extends javax.swing.JFrame {
                             .addComponent(txtRecursos, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btninsertar)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btninsertar)
+                        .addComponent(jButton2))
                     .addComponent(btnactualizar)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btneliminar)
@@ -210,7 +228,8 @@ public class salas extends javax.swing.JFrame {
 
         sala s = new sala(txtidSala.getText(), txtnombreSala.getText(), txtCapacidad.getText(), txtRecursos.getText(), txtObservacion.getText());
 
-        listaSalas.add(s);
+        mvc.listaSalas.add(s);
+        
 
         lista sal = new lista();
 
@@ -232,14 +251,14 @@ public class salas extends javax.swing.JFrame {
     }
 
     public void mostrar() {
-
-        String mat[][] = new String[listaSalas.size()][5];
-        for (int i = 0; i < listaSalas.size(); i++) {
-            mat[i][0] = listaSalas.get(i).getId();
-            mat[i][1] = listaSalas.get(i).getNombre();
-            mat[i][2] = listaSalas.get(i).getCapacidad();
-            mat[i][3] = listaSalas.get(i).getRecurso();
-            mat[i][4] = listaSalas.get(i).getObservacion();
+        mvc.listaSalas.get(0);
+        String mat[][] = new String[mvc.listaSalas.size()][5];
+        for (int i = 0; i < mvc.listaSalas.size(); i++) {
+            mat[i][0] = mvc.listaSalas.get(i).getId();
+            mat[i][1] = mvc.listaSalas.get(i).getNombre();
+            mat[i][2] = mvc.listaSalas.get(i).getCapacidad();
+            mat[i][3] = mvc.listaSalas.get(i).getRecurso();
+            mat[i][4] = mvc.listaSalas.get(i).getObservacion();
         }
         datos.setModel(new javax.swing.table.DefaultTableModel(
                 mat,
@@ -249,20 +268,20 @@ public class salas extends javax.swing.JFrame {
         ));
     }
     private void btnactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarActionPerformed
-        for (int j = 0; j < listaSalas.size(); j++) {
-            if (listaSalas.get(j).getId().equals(txtidSala.getText())) {
+        for (int j = 0; j < mvc.listaSalas.size(); j++) {
+            if (mvc.listaSalas.get(j).getId().equals(txtidSala.getText())) {
 
                 if (!txtnombreSala.getText().equals("")) {
-                    listaSalas.get(j).setNombre(txtnombreSala.getText());
+                    mvc.listaSalas.get(j).setNombre(txtnombreSala.getText());
                 }
                 if (!txtCapacidad.getText().equals("")) {
-                    listaSalas.get(j).setCapacidad(txtCapacidad.getText());
+                    mvc.listaSalas.get(j).setCapacidad(txtCapacidad.getText());
                 }
                 if (!txtRecursos.getText().equals("")) {
-                    listaSalas.get(j).setRecurso(txtRecursos.getText());
+                    mvc.listaSalas.get(j).setRecurso(txtRecursos.getText());
                 }
                 if (!txtObservacion.getText().equals("")) {
-                    listaSalas.get(j).setObservacion(txtObservacion.getText());
+                    mvc.listaSalas.get(j).setObservacion(txtObservacion.getText());
                 }
             }
 
@@ -273,9 +292,9 @@ public class salas extends javax.swing.JFrame {
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
 
-        for (int j = 0; j < listaSalas.size(); j++) {
-            if (listaSalas.get(j).getId().equals(txtidSala.getText())) {
-                listaSalas.remove(j);
+        for (int j = 0; j < mvc.listaSalas.size(); j++) {
+            if (mvc.listaSalas.get(j).getId().equals(txtidSala.getText())) {
+                mvc.listaSalas.remove(j);
             } else {
                 System.out.println("lakjlk");
             }
@@ -290,10 +309,19 @@ public class salas extends javax.swing.JFrame {
     }//GEN-LAST:event_txtRecursosActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        sala p = new sala("1", "Sala201", "23", "Desarrollo", "Ninguna");
-        listaSalas.add(p);
-        mostrar();
+        
+       
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        vista.PantallaIncio frame = new PantallaIncio();
+        frame.setVisible(true);
+        salas.this.hide();
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -336,6 +364,7 @@ public class salas extends javax.swing.JFrame {
     private javax.swing.JButton btninsertar;
     private javax.swing.JTable datos;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

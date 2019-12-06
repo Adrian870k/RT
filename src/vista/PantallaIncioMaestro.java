@@ -19,15 +19,19 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
 
         File IconoChat = new File("src\\images\\chat.png");
+         File IconoSalir = new File("src\\images\\logout.png");
         File IconoMas = new File("src\\images\\anadir.png");
+        File IconoMas2 = new File("src\\images\\next.png");
         File IconoCancel = new File("src\\images\\cerrar.png");
         File IconMinimizar = new File("src\\images\\minimizar.png");
         File IconHome = new File("src\\images\\home.png");
 
         rsscalelabel.RSScaleLabel.setScaleLabel(labelChat, IconoChat.getAbsolutePath());
         rsscalelabel.RSScaleLabel.setScaleLabel(labelMas, IconoMas.getAbsolutePath());
+        rsscalelabel.RSScaleLabel.setScaleLabel(labelMas2, IconoMas2.getAbsolutePath());
         rsscalelabel.RSScaleLabel.setScaleLabel(LabelCerrar, IconoCancel.getAbsolutePath());
         rsscalelabel.RSScaleLabel.setScaleLabel(IconoMinimizar, IconMinimizar.getAbsolutePath());
+        rsscalelabel.RSScaleLabel.setScaleLabel(labelSalir, IconoSalir.getAbsolutePath());
         rsscalelabel.RSScaleLabel.setScaleLabel(LabelHome, IconHome.getAbsolutePath());
 
     }
@@ -58,6 +62,8 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
         IconoMinimizar = new javax.swing.JLabel();
         IconCerrar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        labelMas2 = new javax.swing.JLabel();
+        labelSalir = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -239,19 +245,21 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
         });
         panelprincipal.add(LabelCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 10, 30, 30));
 
+        labelMas.setText("op3");
         labelMas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 labelMasMouseClicked(evt);
             }
         });
-        panelprincipal.add(labelMas, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, 150, 150));
+        panelprincipal.add(labelMas, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, 150, 150));
 
+        labelChat.setText("op1");
         labelChat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 labelChatMouseClicked(evt);
             }
         });
-        panelprincipal.add(labelChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 150, 150));
+        panelprincipal.add(labelChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 150, 150));
 
         IconoMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -269,7 +277,23 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jLabel1.setText("Inicio");
-        panelprincipal.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 110, 30));
+        panelprincipal.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 60, 30));
+
+        labelMas2.setText("op2");
+        labelMas2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelMas2MouseClicked(evt);
+            }
+        });
+        panelprincipal.add(labelMas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 150, 150));
+
+        labelSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logout.png"))); // NOI18N
+        labelSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelSalirMouseClicked(evt);
+            }
+        });
+        panelprincipal.add(labelSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 70, 70));
 
         getContentPane().add(panelprincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1050, 580));
 
@@ -342,6 +366,19 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
+    private void labelMas2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelMas2MouseClicked
+        vista.Horarios hor = new vista.Horarios();
+        
+        hor.setTitle("Horarios");
+        hor.setLocationRelativeTo(null);
+        hor.setVisible(true);
+        
+    }//GEN-LAST:event_labelMas2MouseClicked
+
+    private void labelSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelSalirMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_labelSalirMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -395,6 +432,8 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel labelChat;
     private javax.swing.JLabel labelMas;
+    private javax.swing.JLabel labelMas2;
+    private javax.swing.JLabel labelSalir;
     private javax.swing.JPanel panelprincipal;
     // End of variables declaration//GEN-END:variables
 }
