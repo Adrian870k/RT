@@ -47,7 +47,7 @@ public class mvc {
         
         
         for (int i = 0; i < listaSalas.size(); i++) {
-            String [][] m = new String[11][6];
+            String [][] m = new String[15][6];
             p.insertar(mvc.listaSalas.get(i).getNombre(), m , mvc.listaSalas.get(i).getRecurso());
         }
         

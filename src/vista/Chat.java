@@ -145,7 +145,7 @@ public class Chat extends javax.swing.JFrame {
         jLabel7.setText("Actividad:");
         panelRecHor.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 39, -1, -1));
 
-        actividad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Desarrollo", "Redes", "Diseño", "Documentacion", "Base de datos" }));
+        actividad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Desarrollo", "Redes", "Base de datos" }));
         panelRecHor.add(actividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 98, -1));
 
         getContentPane().add(panelRecHor, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 350, 290));
@@ -185,13 +185,13 @@ public class Chat extends javax.swing.JFrame {
        String asd =  mvc.mvc.p.reservar(act, hr, di);
         
       
-            System.out.println(asd);
+           
        
         
         
        
         
-        jTextPaneCharla.setText("Tu reserva quedo asignada asi:\nDía:" + Dias.getSelectedItem() + "\nHora:" + hora.getSelectedItem() + "\nActividad: " + actividad.getSelectedItem());
+        jTextPaneCharla.setText("Tu reserva quedo asignada asi:\nDía:" + Dias.getSelectedItem() + "\nHora:" + hora.getSelectedItem() + "\nActividad: " + actividad.getSelectedItem()+ " Sala:"+asd);
         info += jTextPaneCharla.getText();
     }//GEN-LAST:event_ReservarActionPerformed
 

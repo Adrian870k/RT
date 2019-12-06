@@ -13,7 +13,7 @@ public class Nodo {
 
     public String nombre;
     public String actividad;
-    public String horario[][] = new String[11][6];
+    public String horario[][] = new String[15][6];
     Nodo siguiente;
 
     public Nodo(String name, String[][] mat, String act) {

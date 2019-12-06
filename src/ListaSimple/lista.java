@@ -40,7 +40,7 @@ public class lista {
         while (auxiliar != null) {
             System.out.println(auxiliar.nombre);
             System.out.println("");
-            for (int i = 0; i < 11; i++) {
+            for (int i = 0; i < 15; i++) {
                 for (int j = 0; j < 6; j++) {
                     System.out.print(auxiliar.horario[i][j]);
                 }
@@ -61,10 +61,30 @@ public class lista {
             System.out.println("entra");
             if (auxiliar.actividad.equalsIgnoreCase(actividad) && auxiliar.horario[hora][dia] == null) {
                 auxiliar.horario[hora][dia] = "Ocupado";
-                return "Si";
+                return auxiliar.nombre;
             }
             auxiliar = auxiliar.siguiente;
         }
         return "No";
     }
+    
+    public void consultar(String sala,String mat[][]){
+    Nodo auxiliar = primerElemento;
+
+        while (auxiliar != null) {
+            System.out.println("entra");
+            if (auxiliar.nombre.equalsIgnoreCase(sala)) {
+                for (int i = 0; i < 15; i++) {
+                    for (int j = 0; j < 6; j++) {
+                        mat[i][j] = auxiliar.horario[i][j];
+                    }
+                }
+           
+            }
+            auxiliar = auxiliar.siguiente;
+        }
+    
+    }
+    
+    
 }

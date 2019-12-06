@@ -10,5 +10,5 @@ package admin;
  * @author yordan.quintero
  */
 public class Horario {
-    String mat[][] = new String[16][6];
+    String mat[][] = new String[11][6];
 }
