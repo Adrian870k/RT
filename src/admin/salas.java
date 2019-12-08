@@ -233,7 +233,7 @@ public class salas extends javax.swing.JFrame {
 
         lista sal = new lista();
 
-        String[][] mat = new String[15][6];
+        String[][] mat = new String[16][6];
         sal.insertar(txtnombreSala.getText(), mat, txtRecursos.getText());
         sal.mostrarMat();
 

@@ -6,7 +6,9 @@
 package vista;
 
 import ListaSimple.lista;
+import admin.sala;
 import java.util.Arrays;
+import admin.MiReserva;
 
 /**
  *
@@ -85,7 +87,7 @@ public class Chat extends javax.swing.JFrame {
         });
         panelRecHor.add(Dias, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 98, -1));
 
-        hora.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06:00-7:00", "07:00-8:00", "09:00-10:00", "10:00-11:00", "12:00-13:00", "13:00-14:00", "15:00-16:00", "16:00-17:00", "18:00-19:00", "19:00-20:00", "21:00-22:00" }));
+        hora.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06:00-7:00", "07:00-8:00", "08:00-09:00", "09:00-10:00", "10:00-11:00", "11:00-12:00", "12:00-13:00", "13:00-14:00", "14:00-15:00", "15:00-16:00", "16:00-17:00", "17:00-18:00", "18:00-19:00", "19:00-20:00", "20:00-21:00", "21:00-22:00" }));
         panelRecHor.add(hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 98, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
@@ -177,27 +179,25 @@ public class Chat extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void ReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservarActionPerformed
+
         String act = actividad.getSelectedItem().toString();
         int hr = hora.getSelectedIndex();
         int di = Dias.getSelectedIndex();
-        
+        System.out.println("Hora  "+hr+ " "+hora.getSelectedItem()+" | "+di+" "+Dias.getSelectedItem());
         ListaSimple.lista l = new ListaSimple.lista();
-       String asd =  mvc.mvc.p.reservar(act, hr, di);
-        
-      
-           
-       
-        
-        
-       
-        
-        jTextPaneCharla.setText("Tu reserva quedo asignada asi:\nDía:" + Dias.getSelectedItem() + "\nHora:" + hora.getSelectedItem() + "\nActividad: " + actividad.getSelectedItem()+ " Sala:"+asd);
-        info += jTextPaneCharla.getText();
+        String nombreSala = mvc.mvc.p.reservar(act, hr, di);
+
+        if (!nombreSala.equalsIgnoreCase("no")) {
+            jTextPaneCharla.setText("Tu reserva quedo asignada asi:\nDía:" + Dias.getSelectedItem() + "\nHora:" + hora.getSelectedItem() + "\nActividad: " + actividad.getSelectedItem() + "\nSala:" + nombreSala);
+            info += jTextPaneCharla.getText();
+            MiReserva nuevaMiReserva = new admin.MiReserva((mvc.mvc.contador),nombreSala, Dias.getSelectedItem().toString(), hora.getSelectedItem().toString(),hr,di);
+            mvc.mvc.contador++;
+            mvc.mvc.listaReserva.add(nuevaMiReserva);
+        } else {
+            jTextPaneCharla.setText("No hay salas disponibles");
+        }
     }//GEN-LAST:event_ReservarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

@@ -2,6 +2,7 @@ package mvc;
 
 import ListaSimple.lista;
 import Vista.Login;
+import admin.MiReserva;
 import admin.Persona;
 import admin.sala;
 import java.util.ArrayList;
@@ -9,11 +10,13 @@ import java.util.ArrayList;
 /**
  * @author yordan.quintero
  */
-
 public class mvc {
 
     public static ArrayList<sala> listaSalas = new ArrayList<>();
     public static ArrayList<Persona> lista = new ArrayList();
+    public static ArrayList<MiReserva> listaReserva = new ArrayList<>();
+    public static int contador = 0;
+
     public static lista p = new lista();
 
     public static void main(String[] args) {
@@ -35,25 +38,21 @@ public class mvc {
         Persona ad = new Persona("3", "Alberto Ateortua", "abc123", "Maestro");
         Persona ae = new Persona("4", "Jaime Jimenez", "abc123", "Maestro");
         Persona af = new Persona("5", "Eduard Hernandez", "abc123", "Maestro");
+        Persona aq = new Persona("1", "Luis", "abc", "Maestro");
 
         mvc.lista.add(ab);
         mvc.lista.add(ac);
         mvc.lista.add(ad);
         mvc.lista.add(ae);
         mvc.lista.add(af);
-        
-        
-        
-        
+        mvc.lista.add(aq);
         
         for (int i = 0; i < listaSalas.size(); i++) {
-            String [][] m = new String[15][6];
-            p.insertar(mvc.listaSalas.get(i).getNombre(), m , mvc.listaSalas.get(i).getRecurso());
+            String[][] m = new String[16][6];
+            p.insertar(mvc.listaSalas.get(i).getNombre(), m, mvc.listaSalas.get(i).getRecurso());
         }
-        
+
         p.mostrarMat();
-        
-        
 
         Login ch = new Login();
         ch.setLocationRelativeTo(null);

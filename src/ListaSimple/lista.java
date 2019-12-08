@@ -33,6 +33,17 @@ public class lista {
         }
     }
 
+    public boolean entrar(String name, String pass) {
+
+        for (int i = 0; i < mvc.mvc.lista.size(); i++) {
+            if ((mvc.mvc.lista.get(i).getNombre().equals(name)) && (mvc.mvc.lista.get(i).getClave().equals(pass))) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public void mostrarMat() {
         Nodo auxiliar = primerElemento;
         String numeros = "";
@@ -40,7 +51,7 @@ public class lista {
         while (auxiliar != null) {
             System.out.println(auxiliar.nombre);
             System.out.println("");
-            for (int i = 0; i < 15; i++) {
+            for (int i = 0; i < 16; i++) {
                 for (int j = 0; j < 6; j++) {
                     System.out.print(auxiliar.horario[i][j]);
                 }
@@ -48,6 +59,19 @@ public class lista {
             }
             System.out.println("");
             System.out.println(auxiliar.actividad);
+
+            auxiliar = auxiliar.siguiente;
+        }
+
+    }
+
+    public void quitar(int hora, int dia, String sala) {
+        Nodo auxiliar = primerElemento;
+
+        while (auxiliar != null) {
+            if (sala.equalsIgnoreCase(auxiliar.nombre)) {
+                auxiliar.horario[hora][dia] = null;
+            }
 
             auxiliar = auxiliar.siguiente;
         }
@@ -67,24 +91,23 @@ public class lista {
         }
         return "No";
     }
-    
-    public void consultar(String sala,String mat[][]){
-    Nodo auxiliar = primerElemento;
+
+    public void consultar(String sala, String mat[][]) {
+        Nodo auxiliar = primerElemento;
 
         while (auxiliar != null) {
             System.out.println("entra");
             if (auxiliar.nombre.equalsIgnoreCase(sala)) {
-                for (int i = 0; i < 15; i++) {
+                for (int i = 0; i < 16; i++) {
                     for (int j = 0; j < 6; j++) {
                         mat[i][j] = auxiliar.horario[i][j];
                     }
                 }
-           
+
             }
             auxiliar = auxiliar.siguiente;
         }
-    
+
     }
-    
-    
+
 }

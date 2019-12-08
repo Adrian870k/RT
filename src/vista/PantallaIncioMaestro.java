@@ -13,39 +13,34 @@ import javax.swing.ImageIcon;
  * @author hp
  */
 public class PantallaIncioMaestro extends javax.swing.JFrame {
-
+    
     public PantallaIncioMaestro() {
         initComponents();
         this.setLocationRelativeTo(null);
-
+        
         File IconoChat = new File("src\\images\\chat.png");
-         File IconoSalir = new File("src\\images\\logout.png");
+        File IconoSalir = new File("src\\images\\logout.png");
         File IconoMas = new File("src\\images\\anadir.png");
         File IconoMas2 = new File("src\\images\\next.png");
         File IconoCancel = new File("src\\images\\cerrar.png");
         File IconMinimizar = new File("src\\images\\minimizar.png");
         File IconHome = new File("src\\images\\home.png");
-
+        
         rsscalelabel.RSScaleLabel.setScaleLabel(labelChat, IconoChat.getAbsolutePath());
         rsscalelabel.RSScaleLabel.setScaleLabel(labelMas, IconoMas.getAbsolutePath());
         rsscalelabel.RSScaleLabel.setScaleLabel(labelMas2, IconoMas2.getAbsolutePath());
         rsscalelabel.RSScaleLabel.setScaleLabel(LabelCerrar, IconoCancel.getAbsolutePath());
         rsscalelabel.RSScaleLabel.setScaleLabel(IconoMinimizar, IconMinimizar.getAbsolutePath());
         rsscalelabel.RSScaleLabel.setScaleLabel(labelSalir, IconoSalir.getAbsolutePath());
-        rsscalelabel.RSScaleLabel.setScaleLabel(LabelHome, IconHome.getAbsolutePath());
 
+        
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         panelprincipal = new javax.swing.JPanel();
-        FrameMas = new javax.swing.JInternalFrame();
-        jPanel2 = new javax.swing.JPanel();
-        JButtonSalir = new javax.swing.JButton();
-        JButtonMisReservas = new javax.swing.JButton();
-        LabelHome = new javax.swing.JLabel();
         Informacion = new javax.swing.JInternalFrame();
         jPanel1 = new javax.swing.JPanel();
         CerrarInfoSalas = new javax.swing.JButton();
@@ -74,69 +69,6 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
         panelprincipal.setMinimumSize(new java.awt.Dimension(46, 25));
         panelprincipal.setPreferredSize(new java.awt.Dimension(1000, 550));
         panelprincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        FrameMas.setFocusTraversalPolicyProvider(true);
-        FrameMas.setVisible(false);
-
-        JButtonSalir.setText("Salir");
-        JButtonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                JButtonSalirMouseClicked(evt);
-            }
-        });
-        JButtonSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JButtonSalirActionPerformed(evt);
-            }
-        });
-
-        JButtonMisReservas.setText("Mis reservas");
-
-        LabelHome.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LabelHomeMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(109, 109, 109)
-                .addComponent(JButtonSalir)
-                .addGap(107, 107, 107)
-                .addComponent(JButtonMisReservas)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(LabelHome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LabelHome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JButtonSalir)
-                    .addComponent(JButtonMisReservas))
-                .addGap(50, 50, 50))
-        );
-
-        javax.swing.GroupLayout FrameMasLayout = new javax.swing.GroupLayout(FrameMas.getContentPane());
-        FrameMas.getContentPane().setLayout(FrameMasLayout);
-        FrameMasLayout.setHorizontalGroup(
-            FrameMasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        FrameMasLayout.setVerticalGroup(
-            FrameMasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        panelprincipal.add(FrameMas, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 490, 260));
 
         Informacion.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         Informacion.setAutoscrolls(true);
@@ -318,19 +250,19 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
 
     private void CerrarInfoSalasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CerrarInfoSalasMouseClicked
         Informacion.setVisible(false);
-
+        
 
     }//GEN-LAST:event_CerrarInfoSalasMouseClicked
 
     private void labelChatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelChatMouseClicked
-
+        
         vista.Chat c = new vista.Chat();
         c.setLocationRelativeTo(null);
         c.panelPresentacion.setVisible(false);
         c.panelRecHor.setVisible(false);
-
+        
         c.setVisible(true);
-
+        
 
     }//GEN-LAST:event_labelChatMouseClicked
 
@@ -339,28 +271,20 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void labelMasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelMasMouseClicked
-        labelMas.setVisible(false);
-        labelChat.setVisible(false);
-        FrameMas.setVisible(true);
+        
+        vista.misReservas frame = new vista.misReservas();
+        frame.setLocationRelativeTo(null);
+        frame.setTitle("Mis reservas");
+        frame.mostrarHorarios();
+        frame.setVisible(true);
+        
+        
+        
+        
+        
+        
 
     }//GEN-LAST:event_labelMasMouseClicked
-
-    private void JButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonSalirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JButtonSalirActionPerformed
-
-    private void JButtonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JButtonSalirMouseClicked
-        Vista.Login frame1 = new Vista.Login();
-        frame1.setVisible(true);
-        PantallaIncioMaestro.this.dispose();
-    }//GEN-LAST:event_JButtonSalirMouseClicked
-
-    private void LabelHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelHomeMouseClicked
-        labelMas.setVisible(true);
-        labelChat.setVisible(true);
-        FrameMas.setVisible(false);
-
-    }//GEN-LAST:event_LabelHomeMouseClicked
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
@@ -412,21 +336,16 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CerrarInfoSalas;
-    private javax.swing.JInternalFrame FrameMas;
     private javax.swing.JLabel IconCerrar;
     private javax.swing.JLabel IconoMinimizar;
     private javax.swing.JInternalFrame Informacion;
-    private javax.swing.JButton JButtonMisReservas;
-    private javax.swing.JButton JButtonSalir;
     private javax.swing.JLabel LabelCerrar;
-    private javax.swing.JLabel LabelHome;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
