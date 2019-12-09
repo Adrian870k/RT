@@ -20,8 +20,8 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
         
         File IconoChat = new File("src\\images\\chat.png");
         File IconoSalir = new File("src\\images\\logout.png");
-        File IconoMas = new File("src\\images\\anadir.png");
-        File IconoMas2 = new File("src\\images\\next.png");
+        File IconoMas = new File("src\\images\\star.png");
+        File IconoMas2 = new File("src\\images\\buscar.png");
         File IconoCancel = new File("src\\images\\cerrar.png");
         File IconMinimizar = new File("src\\images\\minimizar.png");
         File IconHome = new File("src\\images\\home.png");
@@ -59,6 +59,9 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         labelMas2 = new javax.swing.JLabel();
         labelSalir = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -175,7 +178,7 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
                 LabelCerrarMouseClicked(evt);
             }
         });
-        panelprincipal.add(LabelCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 10, 30, 30));
+        panelprincipal.add(LabelCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 30, 30));
 
         labelMas.setText("op3");
         labelMas.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -198,18 +201,18 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
                 IconoMinimizarMouseClicked(evt);
             }
         });
-        panelprincipal.add(IconoMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 10, 30, 30));
+        panelprincipal.add(IconoMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 10, 30, 30));
 
         IconCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 IconCerrarMouseClicked(evt);
             }
         });
-        panelprincipal.add(IconCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 10, 30, 30));
+        panelprincipal.add(IconCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 30, 30));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
-        jLabel1.setText("Inicio");
-        panelprincipal.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 60, 30));
+        jLabel1.setText("Real Time Resarvation");
+        panelprincipal.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 230, 30));
 
         labelMas2.setText("op2");
         labelMas2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -217,7 +220,7 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
                 labelMas2MouseClicked(evt);
             }
         });
-        panelprincipal.add(labelMas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 150, 150));
+        panelprincipal.add(labelMas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, 150, 150));
 
         labelSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logout.png"))); // NOI18N
         labelSalir.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -225,9 +228,18 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
                 labelSalirMouseClicked(evt);
             }
         });
-        panelprincipal.add(labelSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 70, 70));
+        panelprincipal.add(labelSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 50, 40));
 
-        getContentPane().add(panelprincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1050, 580));
+        jLabel6.setText("Chatbot");
+        panelprincipal.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, -1, -1));
+
+        jLabel7.setText("Consulta de salas");
+        panelprincipal.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, -1, -1));
+
+        jLabel8.setText("Mis reservas");
+        panelprincipal.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 280, -1, -1));
+
+        getContentPane().add(panelprincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -300,7 +312,8 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
     }//GEN-LAST:event_labelMas2MouseClicked
 
     private void labelSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelSalirMouseClicked
-        // TODO add your handling code here:
+        Vista.Login frame1 = new Vista.Login();
+        frame1.setVisible(true);
     }//GEN-LAST:event_labelSalirMouseClicked
 
     /**
@@ -345,6 +358,9 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;

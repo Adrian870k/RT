@@ -29,11 +29,15 @@ public class PantallaIncio extends javax.swing.JFrame {
         File IconoCancel = new File("src\\images\\cerrar.png");
         File IconMinimizar = new File("src\\images\\minimizar.png");
         File IconHome = new File("src\\images\\home.png");
+        File IconoSalir = new File("src\\images\\logout.png");
+        File IconoUser = new File("src\\images\\avatar.png");
+        File IconoSala = new File("src\\images\\edit.png");
 
-       
         rsscalelabel.RSScaleLabel.setScaleLabel(LabelCerrar, IconoCancel.getAbsolutePath());
         rsscalelabel.RSScaleLabel.setScaleLabel(IconoMinimizar, IconMinimizar.getAbsolutePath());
-       
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelSalir, IconoSalir.getAbsolutePath());
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUsuarios, IconoUser.getAbsolutePath());
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelSalas, IconoSala.getAbsolutePath());
 
     }
 
@@ -54,6 +58,8 @@ public class PantallaIncio extends javax.swing.JFrame {
         jLabelSalas = new javax.swing.JLabel();
         jLabelUsuarios = new javax.swing.JLabel();
         jLabelSalir = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -70,25 +76,25 @@ public class PantallaIncio extends javax.swing.JFrame {
                 LabelCerrarMouseClicked(evt);
             }
         });
-        panelprincipal.add(LabelCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 10, 30, 30));
+        panelprincipal.add(LabelCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 30, 30));
 
         IconoMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 IconoMinimizarMouseClicked(evt);
             }
         });
-        panelprincipal.add(IconoMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 10, 30, 30));
+        panelprincipal.add(IconoMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 10, 30, 30));
 
         IconCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 IconCerrarMouseClicked(evt);
             }
         });
-        panelprincipal.add(IconCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 10, 30, 30));
+        panelprincipal.add(IconCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 30, 30));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
-        jLabel1.setText("Salas");
-        panelprincipal.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 110, 30));
+        jLabel1.setText("Inicio-Administrador");
+        panelprincipal.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 230, 30));
 
         jLabelSalas.setText("Salas");
         jLabelSalas.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -96,7 +102,7 @@ public class PantallaIncio extends javax.swing.JFrame {
                 jLabelSalasMouseClicked(evt);
             }
         });
-        panelprincipal.add(jLabelSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, -1, -1));
+        panelprincipal.add(jLabelSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 150, 150));
 
         jLabelUsuarios.setText("Usuarios");
         jLabelUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -104,7 +110,7 @@ public class PantallaIncio extends javax.swing.JFrame {
                 jLabelUsuariosMouseClicked(evt);
             }
         });
-        panelprincipal.add(jLabelUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, -1, -1));
+        panelprincipal.add(jLabelUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 120, 150, 150));
 
         jLabelSalir.setText("Salir");
         jLabelSalir.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -112,9 +118,15 @@ public class PantallaIncio extends javax.swing.JFrame {
                 jLabelSalirMouseClicked(evt);
             }
         });
-        panelprincipal.add(jLabelSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, -1, -1));
+        panelprincipal.add(jLabelSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 60, 40));
 
-        getContentPane().add(panelprincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 580));
+        jLabel2.setText("Usuarios");
+        panelprincipal.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, -1, -1));
+
+        jLabel3.setText("Salas");
+        panelprincipal.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, -1, -1));
+
+        getContentPane().add(panelprincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -133,10 +145,8 @@ public class PantallaIncio extends javax.swing.JFrame {
 
     private void jLabelSalasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSalasMouseClicked
 
-              
-        
         salas s = new salas();
-        
+
         s.setTitle("Salas");
         s.setLocationRelativeTo(null);
         s.mostrar();
@@ -144,17 +154,19 @@ public class PantallaIncio extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelSalasMouseClicked
 
     private void jLabelUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelUsuariosMouseClicked
-      admin.user frame = new user();
-      frame.setLocationRelativeTo(null);
-      frame.mostrar();
-      frame.setVisible(true);
-     
+        admin.user frame = new user();
+        frame.setLocationRelativeTo(null);
+        frame.mostrar();
+        frame.setVisible(true);
+
     }//GEN-LAST:event_jLabelUsuariosMouseClicked
 
     private void jLabelSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSalirMouseClicked
         Vista.Login frame1 = new Vista.Login();
         frame1.setVisible(true);
-        
+        PantallaIncio j = new PantallaIncio();
+
+
     }//GEN-LAST:event_jLabelSalirMouseClicked
 
     /**
@@ -193,6 +205,8 @@ public class PantallaIncio extends javax.swing.JFrame {
     private javax.swing.JLabel IconoMinimizar;
     private javax.swing.JLabel LabelCerrar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelSalas;
     private javax.swing.JLabel jLabelSalir;
     private javax.swing.JLabel jLabelUsuarios;

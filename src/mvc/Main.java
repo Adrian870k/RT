@@ -10,10 +10,10 @@ import java.util.ArrayList;
 /**
  * @author yordan.quintero
  */
-public class mvc {
+public class Main {
 
     public static ArrayList<sala> listaSalas = new ArrayList<>();
-    public static ArrayList<Persona> lista = new ArrayList();
+    public static ArrayList<Persona> lista = new ArrayList<>();
     public static ArrayList<MiReserva> listaReserva = new ArrayList<>();
     public static int contador = 0;
 
@@ -27,11 +27,11 @@ public class mvc {
         sala d = new sala("4", "Sala204", "21", "Redes", "Ninguna");
         sala e = new sala("5", "Sala205", "20", "Desarrollo", "Ninguna");
 
-        mvc.listaSalas.add(a);
-        mvc.listaSalas.add(b);
-        mvc.listaSalas.add(c);
-        mvc.listaSalas.add(d);
-        mvc.listaSalas.add(e);
+        Main.listaSalas.add(a);
+        Main.listaSalas.add(b);
+        Main.listaSalas.add(c);
+        Main.listaSalas.add(d);
+        Main.listaSalas.add(e);
 
         Persona ab = new Persona("1", "Juan Velazques", "abc123", "Maestro");
         Persona ac = new Persona("2", "Carlos Muñoz", "abc123", "Maestro");
@@ -40,16 +40,16 @@ public class mvc {
         Persona af = new Persona("5", "Eduard Hernandez", "abc123", "Maestro");
         Persona aq = new Persona("1", "Luis", "abc", "Maestro");
 
-        mvc.lista.add(ab);
-        mvc.lista.add(ac);
-        mvc.lista.add(ad);
-        mvc.lista.add(ae);
-        mvc.lista.add(af);
-        mvc.lista.add(aq);
+        Main.lista.add(ab);
+        Main.lista.add(ac);
+        Main.lista.add(ad);
+        Main.lista.add(ae);
+        Main.lista.add(af);
+        Main.lista.add(aq);
         
         for (int i = 0; i < listaSalas.size(); i++) {
             String[][] m = new String[16][6];
-            p.insertar(mvc.listaSalas.get(i).getNombre(), m, mvc.listaSalas.get(i).getRecurso());
+            p.insertar(Main.listaSalas.get(i).getNombre(), m, Main.listaSalas.get(i).getRecurso());
         }
 
         p.mostrarMat();

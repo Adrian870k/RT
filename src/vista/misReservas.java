@@ -5,7 +5,7 @@
  */
 package vista;
 
-import mvc.mvc;
+import mvc.Main;
 
 /**
  *
@@ -115,10 +115,10 @@ public class misReservas extends javax.swing.JFrame {
         String codigo = (String) jTableMisReservas.getValueAt(jTableMisReservas.getSelectedRow(), 0);
         System.out.println(codigo);
 
-        for (int j = 0; j < mvc.listaReserva.size(); j++) {
-            if (mvc.listaReserva.get(j).getId() == (Integer.parseInt(codigo))) {
-                mvc.p.quitar(mvc.listaReserva.get(j).getPosicionHor(), mvc.listaReserva.get(j).getPosicionDia(),mvc.listaReserva.get(j).getSala());
-                mvc.listaReserva.remove(j);
+        for (int j = 0; j < Main.listaReserva.size(); j++) {
+            if (Main.listaReserva.get(j).getId() == (Integer.parseInt(codigo))) {
+                Main.p.quitar(Main.listaReserva.get(j).getPosicionHor(), Main.listaReserva.get(j).getPosicionDia(),Main.listaReserva.get(j).getSala());
+                Main.listaReserva.remove(j);
 
             } else {
                 System.out.println("lakjlk");
@@ -174,13 +174,13 @@ public class misReservas extends javax.swing.JFrame {
 
     public void mostrarHorarios() {
 
-        String m[][] = new String[mvc.listaReserva.size()][4];
-        for (int i = 0; i < mvc.listaReserva.size(); i++) {
+        String m[][] = new String[Main.listaReserva.size()][4];
+        for (int i = 0; i < Main.listaReserva.size(); i++) {
 
-            m[i][0] = ""+ mvc.listaReserva.get(i).getId();
-            m[i][1] = mvc.listaReserva.get(i).getSala();
-            m[i][2] = mvc.listaReserva.get(i).getDia();
-            m[i][3] = mvc.listaReserva.get(i).getHora();
+            m[i][0] = ""+ Main.listaReserva.get(i).getId();
+            m[i][1] = Main.listaReserva.get(i).getSala();
+            m[i][2] = Main.listaReserva.get(i).getDia();
+            m[i][3] = Main.listaReserva.get(i).getHora();
         }
         jTableMisReservas.setModel(new javax.swing.table.DefaultTableModel(
                 m,
