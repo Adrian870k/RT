@@ -7,7 +7,7 @@ package admin;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import mvc.mvc;
+import mvc.Main;
 
 /**
  *
@@ -155,7 +155,7 @@ public class user extends javax.swing.JFrame {
 
     private void btninsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninsertarActionPerformed
         Persona per = new Persona(txtid.getText(), txtnombre.getText(), txtClave.getText(), txtRol.getText());
-        mvc.lista.add(per);
+        Main.lista.add(per);
        
 
         mostrar();
@@ -167,12 +167,12 @@ public class user extends javax.swing.JFrame {
     }//GEN-LAST:event_btninsertarActionPerformed
 
     public void mostrar() {
-        String mat[][] = new String[ mvc.lista.size()][4];
-        for (int i = 0; i < mvc.lista.size(); i++) {
-            mat[i][0] = mvc.lista.get(i).getId();
-            mat[i][1] = mvc.lista.get(i).getNombre();
-            mat[i][2] = mvc.lista.get(i).getClave();
-            mat[i][3] = mvc.lista.get(i).getRol();
+        String mat[][] = new String[ Main.lista.size()][4];
+        for (int i = 0; i < Main.lista.size(); i++) {
+            mat[i][0] = Main.lista.get(i).getId();
+            mat[i][1] = Main.lista.get(i).getNombre();
+            mat[i][2] = Main.lista.get(i).getClave();
+            mat[i][3] = Main.lista.get(i).getRol();
         }
         datos.setModel(new javax.swing.table.DefaultTableModel(
                 mat,
@@ -182,17 +182,17 @@ public class user extends javax.swing.JFrame {
         ));
     }
     private void btnactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarActionPerformed
-        for (int j = 0; j < mvc.lista.size(); j++) {
-            if (mvc.lista.get(j).getId().equals(txtid.getText())) {
+        for (int j = 0; j < Main.lista.size(); j++) {
+            if (Main.lista.get(j).getId().equals(txtid.getText())) {
 
                 if (!txtnombre.getText().equals("")) {
-                    mvc.lista.get(j).setNombre(txtnombre.getText());
+                    Main.lista.get(j).setNombre(txtnombre.getText());
                 }
                 if (!txtClave.getText().equals("")) {
-                    mvc.lista.get(j).setClave(txtClave.getText());
+                    Main.lista.get(j).setClave(txtClave.getText());
                 }
                 if (!txtRol.getText().equals("")) {
-                    mvc.lista.get(j).setRol(txtRol.getText());
+                    Main.lista.get(j).setRol(txtRol.getText());
                 }
             }
 
@@ -203,9 +203,9 @@ public class user extends javax.swing.JFrame {
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
 
-        for (int j = 0; j < mvc.lista.size(); j++) {
-            if (mvc.lista.get(j).getId().equals(txtid.getText())) {
-                mvc.lista.remove(j);
+        for (int j = 0; j < Main.lista.size(); j++) {
+            if (Main.lista.get(j).getId().equals(txtid.getText())) {
+                Main.lista.remove(j);
             } else {
                 System.out.println("lakjlk");
             }

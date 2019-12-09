@@ -5,7 +5,7 @@ import Vista.Login;
 import Vista.PantallaIncioMaestro;
 import java.util.ArrayList;
 import vista.PantallaIncio;
-import mvc.mvc;
+import mvc.Main;
 
 public class salas extends javax.swing.JFrame {
 
@@ -228,7 +228,7 @@ public class salas extends javax.swing.JFrame {
 
         sala s = new sala(txtidSala.getText(), txtnombreSala.getText(), txtCapacidad.getText(), txtRecursos.getText(), txtObservacion.getText());
 
-        mvc.listaSalas.add(s);
+        Main.listaSalas.add(s);
         
 
         lista sal = new lista();
@@ -251,14 +251,14 @@ public class salas extends javax.swing.JFrame {
     }
 
     public void mostrar() {
-        mvc.listaSalas.get(0);
-        String mat[][] = new String[mvc.listaSalas.size()][5];
-        for (int i = 0; i < mvc.listaSalas.size(); i++) {
-            mat[i][0] = mvc.listaSalas.get(i).getId();
-            mat[i][1] = mvc.listaSalas.get(i).getNombre();
-            mat[i][2] = mvc.listaSalas.get(i).getCapacidad();
-            mat[i][3] = mvc.listaSalas.get(i).getRecurso();
-            mat[i][4] = mvc.listaSalas.get(i).getObservacion();
+        Main.listaSalas.get(0);
+        String mat[][] = new String[Main.listaSalas.size()][5];
+        for (int i = 0; i < Main.listaSalas.size(); i++) {
+            mat[i][0] = Main.listaSalas.get(i).getId();
+            mat[i][1] = Main.listaSalas.get(i).getNombre();
+            mat[i][2] = Main.listaSalas.get(i).getCapacidad();
+            mat[i][3] = Main.listaSalas.get(i).getRecurso();
+            mat[i][4] = Main.listaSalas.get(i).getObservacion();
         }
         datos.setModel(new javax.swing.table.DefaultTableModel(
                 mat,
@@ -268,20 +268,20 @@ public class salas extends javax.swing.JFrame {
         ));
     }
     private void btnactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarActionPerformed
-        for (int j = 0; j < mvc.listaSalas.size(); j++) {
-            if (mvc.listaSalas.get(j).getId().equals(txtidSala.getText())) {
+        for (int j = 0; j < Main.listaSalas.size(); j++) {
+            if (Main.listaSalas.get(j).getId().equals(txtidSala.getText())) {
 
                 if (!txtnombreSala.getText().equals("")) {
-                    mvc.listaSalas.get(j).setNombre(txtnombreSala.getText());
+                    Main.listaSalas.get(j).setNombre(txtnombreSala.getText());
                 }
                 if (!txtCapacidad.getText().equals("")) {
-                    mvc.listaSalas.get(j).setCapacidad(txtCapacidad.getText());
+                    Main.listaSalas.get(j).setCapacidad(txtCapacidad.getText());
                 }
                 if (!txtRecursos.getText().equals("")) {
-                    mvc.listaSalas.get(j).setRecurso(txtRecursos.getText());
+                    Main.listaSalas.get(j).setRecurso(txtRecursos.getText());
                 }
                 if (!txtObservacion.getText().equals("")) {
-                    mvc.listaSalas.get(j).setObservacion(txtObservacion.getText());
+                    Main.listaSalas.get(j).setObservacion(txtObservacion.getText());
                 }
             }
 
@@ -292,9 +292,9 @@ public class salas extends javax.swing.JFrame {
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
 
-        for (int j = 0; j < mvc.listaSalas.size(); j++) {
-            if (mvc.listaSalas.get(j).getId().equals(txtidSala.getText())) {
-                mvc.listaSalas.remove(j);
+        for (int j = 0; j < Main.listaSalas.size(); j++) {
+            if (Main.listaSalas.get(j).getId().equals(txtidSala.getText())) {
+                Main.listaSalas.remove(j);
             } else {
                 System.out.println("lakjlk");
             }
@@ -320,7 +320,8 @@ public class salas extends javax.swing.JFrame {
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         vista.PantallaIncio frame = new PantallaIncio();
         frame.setVisible(true);
-        salas.this.hide();
+        salas s = new salas();
+        s.setVisible(false);
     }//GEN-LAST:event_jButton2MouseClicked
 
     /**

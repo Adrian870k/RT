@@ -1,0 +1,14 @@
+vista.Chat$13
+vista.Chat$12
+vista.Chat$11
+vista.Chat$10
+vista.Chat
+vista.Chat$7
+vista.Chat$8
+vista.Chat$9
+vista.Chat$3
+vista.Chat$4
+vista.Chat$5
+vista.Chat$6
+vista.Chat$1
+vista.Chat$2

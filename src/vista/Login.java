@@ -75,7 +75,7 @@ public class Login extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         IconoUsuario.setPreferredSize(new java.awt.Dimension(20, 512));
-        jPanel2.add(IconoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, 130, 130));
+        jPanel2.add(IconoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 130, 130));
 
         JtextUsername.setBackground(new java.awt.Color(204, 204, 255));
         JtextUsername.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
@@ -92,15 +92,15 @@ public class Login extends javax.swing.JFrame {
                 JtextUsernameActionPerformed(evt);
             }
         });
-        jPanel2.add(JtextUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, 170, 20));
+        jPanel2.add(JtextUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 170, 20));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel1.setText("Contraseña:");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, -1, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel2.setText("Usuario:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, -1, -1));
 
         IconoMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -111,11 +111,11 @@ public class Login extends javax.swing.JFrame {
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 330, 170, 20));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, 170, 20));
 
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 170, 20));
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, 170, 20));
 
         labelEntrar.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         labelEntrar.setText("Entrar");
@@ -128,19 +128,27 @@ public class Login extends javax.swing.JFrame {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 labelEntrarKeyPressed(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                labelEntrarKeyTyped(evt);
+            }
         });
-        jPanel2.add(labelEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, -1, -1));
+        jPanel2.add(labelEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, -1, -1));
 
         IconEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 IconEntrarMouseClicked(evt);
             }
         });
-        jPanel2.add(IconEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, 30, 30));
+        jPanel2.add(IconEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 380, 30, 30));
 
         JtextPassword.setBackground(new java.awt.Color(204, 204, 255));
         JtextPassword.setBorder(null);
-        jPanel2.add(JtextPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, 170, 20));
+        JtextPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                JtextPasswordKeyPressed(evt);
+            }
+        });
+        jPanel2.add(JtextPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, 170, 20));
 
         IconCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -149,7 +157,7 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel2.add(IconCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 10, 30, 30));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 580));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 575));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -167,8 +175,8 @@ public class Login extends javax.swing.JFrame {
         NombreUsuario = JtextUsername.getText();
         PasswordUsuario = JtextPassword.getText();
 
-        boolean quest = mvc.mvc.p.entrar(NombreUsuario,PasswordUsuario);
-       
+        boolean quest = mvc.Main.p.entrar(NombreUsuario, PasswordUsuario);
+
         if (quest) {
             PantallaIncioMaestro frame = new PantallaIncioMaestro();
             frame.setVisible(true);
@@ -202,6 +210,35 @@ public class Login extends javax.swing.JFrame {
     private void IconEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconEntrarMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_IconEntrarMouseClicked
+
+    private void labelEntrarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_labelEntrarKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_labelEntrarKeyTyped
+
+    private void JtextPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JtextPasswordKeyPressed
+        if (evt.getKeyCode() == evt.VK_ENTER) {
+
+            NombreUsuario = JtextUsername.getText();
+            PasswordUsuario = JtextPassword.getText();
+
+            boolean quest = mvc.Main.p.entrar(NombreUsuario, PasswordUsuario);
+
+            if (quest) {
+                PantallaIncioMaestro frame = new PantallaIncioMaestro();
+                frame.setVisible(true);
+                Login.this.dispose();
+            } else if ("yordan".equals(NombreUsuario) && "pass".equals(PasswordUsuario)) {
+                vista.PantallaIncio frame1 = new vista.PantallaIncio();
+//            admin.salas frame2 = new salas();
+                frame1.setVisible(true);
+                Login.this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta");
+            }
+
+        }
+
+    }//GEN-LAST:event_JtextPasswordKeyPressed
 
     /**
      * @param args the command line arguments

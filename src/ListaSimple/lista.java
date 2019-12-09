@@ -35,8 +35,8 @@ public class lista {
 
     public boolean entrar(String name, String pass) {
 
-        for (int i = 0; i < mvc.mvc.lista.size(); i++) {
-            if ((mvc.mvc.lista.get(i).getNombre().equals(name)) && (mvc.mvc.lista.get(i).getClave().equals(pass))) {
+        for (int i = 0; i < mvc.Main.lista.size(); i++) {
+            if ((mvc.Main.lista.get(i).getNombre().equals(name)) && (mvc.Main.lista.get(i).getClave().equals(pass))) {
                 return true;
             }
         }

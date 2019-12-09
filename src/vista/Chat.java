@@ -41,16 +41,16 @@ public class Chat extends javax.swing.JFrame {
         panelRecHor = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jLabel4 = new javax.swing.JLabel();
-        Dias = new javax.swing.JComboBox<String>();
-        hora = new javax.swing.JComboBox<String>();
+        Dias = new javax.swing.JComboBox<>();
+        hora = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jCheckBox17 = new javax.swing.JCheckBox();
         panelPresentacion = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<String>();
+        jComboBox2 = new javax.swing.JComboBox<>();
         Reservar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        actividad = new javax.swing.JComboBox<String>();
+        actividad = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -68,6 +68,7 @@ public class Chat extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 88, 250, 40));
 
+        jTextPaneCharla.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 14)); // NOI18N
         jScrollPane1.setViewportView(jTextPaneCharla);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 454, 450));
@@ -79,7 +80,7 @@ public class Chat extends javax.swing.JFrame {
         jLabel4.setText("Seleccione el dia");
         panelRecHor.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 11, -1, -1));
 
-        Dias.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" }));
+        Dias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" }));
         Dias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DiasActionPerformed(evt);
@@ -87,7 +88,7 @@ public class Chat extends javax.swing.JFrame {
         });
         panelRecHor.add(Dias, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 98, -1));
 
-        hora.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06:00-7:00", "07:00-8:00", "08:00-09:00", "09:00-10:00", "10:00-11:00", "11:00-12:00", "12:00-13:00", "13:00-14:00", "14:00-15:00", "15:00-16:00", "16:00-17:00", "17:00-18:00", "18:00-19:00", "19:00-20:00", "20:00-21:00", "21:00-22:00" }));
+        hora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "06:00-7:00", "07:00-8:00", "08:00-09:00", "09:00-10:00", "10:00-11:00", "11:00-12:00", "12:00-13:00", "13:00-14:00", "14:00-15:00", "15:00-16:00", "16:00-17:00", "17:00-18:00", "18:00-19:00", "19:00-20:00", "20:00-21:00", "21:00-22:00" }));
         panelRecHor.add(hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 98, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
@@ -105,7 +106,7 @@ public class Chat extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         jLabel3.setText("Recurso");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Seleccione-", "Televisor", "Video Beam", "Parlantes" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccione-", "Televisor", "Video Beam", "Parlantes" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -147,7 +148,7 @@ public class Chat extends javax.swing.JFrame {
         jLabel7.setText("Actividad:");
         panelRecHor.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 39, -1, -1));
 
-        actividad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Desarrollo", "Redes", "Base de datos" }));
+        actividad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Desarrollo", "Redes", "Base de datos" }));
         panelRecHor.add(actividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 98, -1));
 
         getContentPane().add(panelRecHor, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 350, 290));
@@ -185,14 +186,14 @@ public class Chat extends javax.swing.JFrame {
         int di = Dias.getSelectedIndex();
         System.out.println("Hora  "+hr+ " "+hora.getSelectedItem()+" | "+di+" "+Dias.getSelectedItem());
         ListaSimple.lista l = new ListaSimple.lista();
-        String nombreSala = mvc.mvc.p.reservar(act, hr, di);
+        String nombreSala = mvc.Main.p.reservar(act, hr, di);
 
         if (!nombreSala.equalsIgnoreCase("no")) {
             jTextPaneCharla.setText("Tu reserva quedo asignada asi:\nDía:" + Dias.getSelectedItem() + "\nHora:" + hora.getSelectedItem() + "\nActividad: " + actividad.getSelectedItem() + "\nSala:" + nombreSala);
             info += jTextPaneCharla.getText();
-            MiReserva nuevaMiReserva = new admin.MiReserva((mvc.mvc.contador),nombreSala, Dias.getSelectedItem().toString(), hora.getSelectedItem().toString(),hr,di);
-            mvc.mvc.contador++;
-            mvc.mvc.listaReserva.add(nuevaMiReserva);
+            MiReserva nuevaMiReserva = new admin.MiReserva((mvc.Main.contador),nombreSala, Dias.getSelectedItem().toString(), hora.getSelectedItem().toString(),hr,di);
+            mvc.Main.contador++;
+            mvc.Main.listaReserva.add(nuevaMiReserva);
         } else {
             jTextPaneCharla.setText("No hay salas disponibles");
         }
