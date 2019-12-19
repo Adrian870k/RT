@@ -2,20 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-<<<<<<< HEAD
-            <file>file:/D:/yordan.quintero/Universidad/RT/src/vista/PantallaIncio.java</file>
-            <file>file:/D:/yordan.quintero/Universidad/RT/src/vista/Login.java</file>
-=======
-            <file>file:/C:/workspace/RT/src/admin/Persona.java</file>
-            <file>file:/C:/workspace/RT/src/Vista/PantallaIncioMaestro.java</file>
-            <file>file:/C:/workspace/RT/src/admin/salas.java</file>
-            <file>file:/C:/workspace/RT/src/mvc/mvc.java</file>
-            <file>file:/C:/workspace/RT/src/Vista/Login.java</file>
-            <file>file:/C:/workspace/RT/src/Vista/PantallaIncio.java</file>
-            <file>file:/C:/workspace/RT/nbproject/build-impl.xml</file>
-            <file>file:/C:/workspace/RT/src/Vista/Chat.java</file>
->>>>>>> f82a4e16f9949224a748e6781fde9381354a48ac
-        </group>
+        <group/>
     </open-files>
 </project-private>

@@ -84,7 +84,7 @@ public class lista {
         while (auxiliar != null) {
             System.out.println("entra");
             if (auxiliar.actividad.equalsIgnoreCase(actividad) && auxiliar.horario[hora][dia] == null) {
-                auxiliar.horario[hora][dia] = "Ocupado";
+                auxiliar.horario[hora][dia] = "Ocupado: "+actividad+",";
                 return auxiliar.nombre;
             }
             auxiliar = auxiliar.siguiente;
