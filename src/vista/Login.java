@@ -16,6 +16,7 @@ public class Login extends javax.swing.JFrame {
         File IconoCancel = new File("src\\images\\cerrar.png");
         File IconNext = new File("src\\images\\next.png");
         File IconMinimizar = new File("src\\images\\minimizar.png");
+        //File IconMinimizar = new File("src\\images\\minimizar.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(IconoUsuario, IconoUser.getAbsolutePath());
         rsscalelabel.RSScaleLabel.setScaleLabel(IconCerrar, IconoCancel.getAbsolutePath());
         rsscalelabel.RSScaleLabel.setScaleLabel(IconEntrar, IconNext.getAbsolutePath());
@@ -86,7 +87,7 @@ public class Login extends javax.swing.JFrame {
                 IconoMinimizarMouseClicked(evt);
             }
         });
-        jPanel2.add(IconoMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 10, 30, 30));
+        jPanel2.add(IconoMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 10, 30, 30));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
@@ -134,7 +135,7 @@ public class Login extends javax.swing.JFrame {
                 IconCerrarMouseClicked(evt);
             }
         });
-        jPanel2.add(IconCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 10, 30, 30));
+        jPanel2.add(IconCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 30, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 575));
 
