@@ -38,7 +38,7 @@ public class Main {
         Persona ad = new Persona("3", "Alberto Ateortua", "abc123", "Maestro");
         Persona ae = new Persona("4", "Jaime Jimenez", "abc123", "Maestro");
         Persona af = new Persona("5", "Eduard Hernandez", "abc123", "Maestro");
-        Persona aq = new Persona("1", "Luis", "abc", "Maestro");
+        Persona aq = new Persona("1", "", "", "Maestro");
 
         Main.lista.add(ab);
         Main.lista.add(ac);

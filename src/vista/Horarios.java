@@ -5,6 +5,7 @@
  */
 package vista;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -238,9 +239,15 @@ public class Horarios extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        String sala = jComboBoxSal.getSelectedItem().toString();
-        mvc.Main.p.consultar(sala, m);
-        mostrarHorarios();
+        try {
+            String sala = jComboBoxSal.getSelectedItem().toString();
+            mvc.Main.p.consultar(sala, m);
+            mostrarHorarios();
+        } catch (Exception e) {
+        
+            System.out.println(e);
+        }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jComboBoxSalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBoxSalMouseClicked
@@ -267,7 +274,7 @@ public class Horarios extends javax.swing.JFrame {
         DefaultTableModel tm = (DefaultTableModel) horariosDatos.getModel();
 
         String dato = String.valueOf(tm.getValueAt(horariosDatos.getSelectedRow(), horariosDatos.getSelectedColumn()));
-        
+
         System.out.println(dato);
     }//GEN-LAST:event_horariosDatosMouseClicked
 

@@ -5,6 +5,7 @@
  */
 package vista;
 
+import javax.swing.JOptionPane;
 import mvc.Main;
 
 /**
@@ -70,7 +71,7 @@ public class misReservas extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTableMisReservas);
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Eliminar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -111,21 +112,28 @@ public class misReservas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        System.out.println("aqui: |" + Main.listaReserva+"|");
+        try {
+            String codigo = (String) jTableMisReservas.getValueAt(jTableMisReservas.getSelectedRow(), 0);
+            System.out.println(codigo);
 
-        String codigo = (String) jTableMisReservas.getValueAt(jTableMisReservas.getSelectedRow(), 0);
-        System.out.println(codigo);
+            if (Main.listaReserva.toString().trim() != "[]" ){
+                for (int j = 0; j < Main.listaReserva.size(); j++) {
 
-        for (int j = 0; j < Main.listaReserva.size(); j++) {
-            if (Main.listaReserva.get(j).getId() == (Integer.parseInt(codigo))) {
-                Main.p.quitar(Main.listaReserva.get(j).getPosicionHor(), Main.listaReserva.get(j).getPosicionDia(),Main.listaReserva.get(j).getSala());
-                Main.listaReserva.remove(j);
+                    if (Main.listaReserva.get(j).getId() == (Integer.parseInt(codigo))) {
+                        Main.p.quitar(Main.listaReserva.get(j).getPosicionHor(), Main.listaReserva.get(j).getPosicionDia(), Main.listaReserva.get(j).getSala());
+                        Main.listaReserva.remove(j);
 
+                    }
+
+                    mostrarHorarios();
+                }
             } else {
-                System.out.println("lakjlk");
+                JOptionPane.showConfirmDialog(null, "No tiene reservas");
             }
-            mostrarHorarios();
+        } catch (Exception e) {
+            System.out.println(e);
         }
-
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -177,7 +185,7 @@ public class misReservas extends javax.swing.JFrame {
         String m[][] = new String[Main.listaReserva.size()][4];
         for (int i = 0; i < Main.listaReserva.size(); i++) {
 
-            m[i][0] = ""+ Main.listaReserva.get(i).getId();
+            m[i][0] = "" + Main.listaReserva.get(i).getId();
             m[i][1] = Main.listaReserva.get(i).getSala();
             m[i][2] = Main.listaReserva.get(i).getDia();
             m[i][3] = Main.listaReserva.get(i).getHora();

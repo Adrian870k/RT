@@ -123,6 +123,11 @@ public class Login extends javax.swing.JFrame {
 
         JtextPassword.setBackground(new java.awt.Color(204, 204, 255));
         JtextPassword.setBorder(null);
+        JtextPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JtextPasswordActionPerformed(evt);
+            }
+        });
         JtextPassword.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 JtextPasswordKeyPressed(evt);
@@ -219,9 +224,10 @@ public class Login extends javax.swing.JFrame {
 
     }//GEN-LAST:event_JtextPasswordKeyPressed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void JtextPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JtextPasswordActionPerformed
+
+    }//GEN-LAST:event_JtextPasswordActionPerformed
+
     public static void main(String args[]) {
 
         /* Set the Nimbus look and feel */
