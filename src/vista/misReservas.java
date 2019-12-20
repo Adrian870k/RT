@@ -33,7 +33,7 @@ public class misReservas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableMisReservas = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        jButtonEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -71,10 +71,10 @@ public class misReservas extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTableMisReservas);
 
-        jButton1.setText("Eliminar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonEliminar.setText("Eliminar");
+        jButtonEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonEliminarActionPerformed(evt);
             }
         });
 
@@ -93,7 +93,7 @@ public class misReservas extends javax.swing.JFrame {
                 .addContainerGap(50, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(jButtonEliminar)
                 .addGap(277, 277, 277))
         );
         layout.setVerticalGroup(
@@ -104,14 +104,14 @@ public class misReservas extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(jButtonEliminar)
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
         System.out.println("aqui: |" + Main.listaReserva+"|");
         try {
             String codigo = (String) jTableMisReservas.getValueAt(jTableMisReservas.getSelectedRow(), 0);
@@ -135,7 +135,7 @@ public class misReservas extends javax.swing.JFrame {
             System.out.println(e);
         }
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonEliminarActionPerformed
 
     private void jTableMisReservasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMisReservasMousePressed
         // TODO add your handling code here:
@@ -200,7 +200,7 @@ public class misReservas extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton jButtonEliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jTableMisReservas;

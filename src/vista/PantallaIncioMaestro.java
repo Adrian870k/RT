@@ -7,17 +7,18 @@ package Vista;
 
 import java.io.File;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author hp
  */
 public class PantallaIncioMaestro extends javax.swing.JFrame {
-    
+
     public PantallaIncioMaestro() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
+
         File IconoChat = new File("src\\images\\chat.png");
         File IconoSalir = new File("src\\images\\logout.png");
         File IconoMas = new File("src\\images\\star.png");
@@ -25,7 +26,7 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
         File IconoCancel = new File("src\\images\\cerrar.png");
         File IconMinimizar = new File("src\\images\\minimizar.png");
         File IconHome = new File("src\\images\\home.png");
-        
+
         rsscalelabel.RSScaleLabel.setScaleLabel(labelChat, IconoChat.getAbsolutePath());
         rsscalelabel.RSScaleLabel.setScaleLabel(labelMas, IconoMas.getAbsolutePath());
         rsscalelabel.RSScaleLabel.setScaleLabel(labelMas2, IconoMas2.getAbsolutePath());
@@ -33,9 +34,8 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(IconoMinimizar, IconMinimizar.getAbsolutePath());
         rsscalelabel.RSScaleLabel.setScaleLabel(labelSalir, IconoSalir.getAbsolutePath());
 
-        
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -262,19 +262,19 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
 
     private void CerrarInfoSalasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CerrarInfoSalasMouseClicked
         Informacion.setVisible(false);
-        
+
 
     }//GEN-LAST:event_CerrarInfoSalasMouseClicked
 
     private void labelChatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelChatMouseClicked
-        
+
         vista.Chat c = new vista.Chat();
         c.setLocationRelativeTo(null);
         c.panelPresentacion.setVisible(false);
         c.panelRecHor.setVisible(false);
-        
+
         c.setVisible(true);
-        
+
 
     }//GEN-LAST:event_labelChatMouseClicked
 
@@ -283,18 +283,19 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void labelMasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelMasMouseClicked
-        
+
         vista.misReservas frame = new vista.misReservas();
         frame.setLocationRelativeTo(null);
         frame.setTitle("Mis reservas");
         frame.mostrarHorarios();
         frame.setVisible(true);
-        
-        
-        
-        
-        
-        
+
+        if (mvc.Main.listaReserva.toString() == "[]") {
+            frame.jButtonEliminar.setEnabled(false);
+            JOptionPane.showMessageDialog(null, "No tiene reservas");
+
+        }
+
 
     }//GEN-LAST:event_labelMasMouseClicked
 
@@ -304,11 +305,11 @@ public class PantallaIncioMaestro extends javax.swing.JFrame {
 
     private void labelMas2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelMas2MouseClicked
         vista.Horarios hor = new vista.Horarios();
-        
+
         hor.setTitle("Horarios");
         hor.setLocationRelativeTo(null);
         hor.setVisible(true);
-        
+
     }//GEN-LAST:event_labelMas2MouseClicked
 
     private void labelSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelSalirMouseClicked
